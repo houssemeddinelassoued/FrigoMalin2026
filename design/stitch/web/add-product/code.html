@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+
+<html lang="fr"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,300..900;1,300..900&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"primary-fixed":"#a6f4b5","surface-bright":"#f8f9ff","on-surface-variant":"#404940","on-error-container":"#93000a","on-primary":"#ffffff","on-surface":"#121c2a","primary-container":"#166534","secondary-fixed":"#a6f2d1","inverse-primary":"#8bd79b","tertiary-container":"#92400e","inverse-on-surface":"#eaf1ff","outline-variant":"#bfc9bd","tertiary-fixed":"#ffdbcb","on-tertiary-fixed-variant":"#7a3000","surface-tint":"#1f6c3a","surface-container-lowest":"#ffffff","surface-dim":"#d0dbed","primary":"#004c22","on-primary-fixed-variant":"#005226","on-secondary-fixed":"#002116","surface-container-highest":"#d9e3f6","tertiary":"#712c00","on-tertiary-fixed":"#341000","on-primary-fixed":"#00210b","on-tertiary":"#ffffff","secondary-container":"#a6f2d1","on-background":"#121c2a","error-container":"#ffdad6","surface-container-low":"#eff4ff","primary-fixed-dim":"#8bd79b","inverse-surface":"#27313f","tertiary-fixed-dim":"#ffb693","on-secondary-fixed-variant":"#00513b","background":"#f8f9ff","surface-variant":"#d9e3f6","on-secondary":"#ffffff","surface-container-high":"#dee9fc","on-tertiary-container":"#ffc2a5","secondary":"#1b6b51","on-error":"#ffffff","surface-container":"#e6eeff","on-primary-container":"#93e0a2","on-secondary-container":"#237157","error":"#ba1a1a","secondary-fixed-dim":"#8bd6b6","surface":"#f8f9ff","outline":"#707a6f"},borderRadius:{DEFAULT:"0.25rem",lg:"0.5rem",xl:"0.75rem",full:"9999px"},spacing:{"space-sm":"0.5rem","space-xs":"0.25rem",gutter:"1rem","space-lg":"1.5rem","gutter-desktop":"1.5rem","space-xl":"2rem",margin:"1rem","margin-desktop":"3rem","margin-tablet":"2rem","space-md":"1rem"},fontFamily:{"body-md":["\"Source Sans 3\""],"headline-sm":["\"Source Sans 3\""],"headline-xl-mobile":["\"Source Sans 3\""],"headline-xl":["\"Source Sans 3\""],"body-lg":["\"Source Sans 3\""],"label-md":["\"Source Sans 3\""],"body-sm":["\"Source Sans 3\""],"label-sm":["\"Source Sans 3\""],"headline-lg":["\"Source Sans 3\""],"label-lg":["\"Source Sans 3\""]},fontSize:{"body-md":["16px",{lineHeight:"24px",fontWeight:"400"}],"headline-sm":["20px",{lineHeight:"28px",fontWeight:"600"}],"headline-xl-mobile":["26px",{lineHeight:"34px",letterSpacing:"-0.015em",fontWeight:"700"}],"headline-xl":["32px",{lineHeight:"40px",letterSpacing:"-0.02em",fontWeight:"700"}],"body-lg":["18px",{lineHeight:"28px",fontWeight:"400"}],"label-md":["13px",{lineHeight:"18px",letterSpacing:"0.02em",fontWeight:"600"}],"body-sm":["14px",{lineHeight:"20px",fontWeight:"400"}],"label-sm":["11px",{lineHeight:"16px",letterSpacing:"0.04em",fontWeight:"700"}],"headline-lg":["24px",{lineHeight:"32px",letterSpacing:"-0.01em",fontWeight:"600"}],"label-lg":["15px",{lineHeight:"20px",letterSpacing:"0.01em",fontWeight:"600"}]}}}};</script></head><body class="bg-surface text-on-surface font-body-md text-body-md antialiased min-h-screen flex flex-col justify-between"><header class="fixed top-0 left-0 right-0 w-full z-50 bg-surface/90 backdrop-blur-md shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-20 max-w-7xl mx-auto px-margin md:px-margin-tablet lg:px-margin-desktop flex items-center justify-between gap-space-lg"><div class="flex items-center gap-space-lg shrink-0"><div class="flex items-center gap-space-sm"><div class="w-10 h-10 rounded-lg bg-primary flex items-center justify-center text-on-primary shadow-sm"><span class="material-symbols-outlined text-[24px]">kitchen</span></div><div class="flex flex-col"><span class="font-headline-lg text-headline-lg tracking-tight text-primary leading-none">FrigoMalin</span><span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-space-xs mt-0.5"><span class="w-2 h-2 rounded-full bg-secondary inline-block"></span>Données locales</span></div></div></div><nav class="flex items-center gap-space-xs bg-surface-container-low p-space-xs rounded-xl" data-active-classes="bg-primary-container text-on-primary font-bold rounded-lg shadow-sm"><a class="flex items-center gap-space-xs px-space-md py-space-sm rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="mon-stock" href="#"><span>Mon stock</span><span class="px-space-xs py-0.5 rounded-full bg-tertiary-container text-on-tertiary font-label-sm text-label-sm leading-none">3</span></a><a class="flex items-center px-space-md py-space-sm rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="idees-recettes" href="#"><span>Idées recettes</span></a><a class="flex items-center px-space-md py-space-sm rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="mon-bilan" href="#"><span>Mon bilan</span></a></nav><div class="flex items-center gap-space-md shrink-0"><a class="inline-flex items-center gap-space-xs bg-primary text-on-primary px-space-lg py-space-sm rounded-lg font-label-lg text-label-lg hover:bg-primary-container transition-colors shadow-sm" data-path="ajouter-un-produit" href="#"><span class="material-symbols-outlined text-[18px]">add</span><span>Ajouter un produit</span></a><div class="h-6 w-px bg-outline-variant hidden sm:block"></div><span class="hidden lg:block font-label-md text-label-md text-on-surface-variant whitespace-nowrap">24 mai 2024</span><a class="p-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors flex items-center justify-center" data-path="parametres" href="#" title="Mon compte et paramètres"><span class="material-symbols-outlined text-[22px]">settings</span></a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-20 flex-1 max-w-7xl mx-auto px-margin md:px-margin-tablet lg:px-margin-desktop py-space-xl"><div class="flex flex-col w-full">
+<!-- En-tête éditorial chaleureux & minimaliste -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md mb-space-xl">
+<div class="space-y-space-xs">
+<div class="inline-flex items-center gap-space-xs px-space-sm py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">offline_bolt</span>
+<span>Mode Hors-Ligne Actif • IndexedDB</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-on-surface tracking-tight">Ajouter un produit au stock</h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">
+        Fonctionne 100% hors-ligne. Les données sont enregistrées dans votre navigateur sans pistage ni compte obligatoire.
+      </p>
+</div>
+<!-- Raccourcis de navigation & inventaire rapide -->
+<div class="flex items-center gap-space-sm">
+<div class="px-space-md py-space-sm rounded-lg bg-surface-container-low text-on-surface flex items-center gap-space-sm shadow-sm">
+<span class="material-symbols-outlined text-primary text-[20px]">inventory_2</span>
+<div class="text-left">
+<p class="font-label-sm text-label-sm text-on-surface-variant leading-none">Produits en stock</p>
+<p class="font-headline-sm text-headline-sm text-primary leading-tight font-bold">24 articles</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Disposition Desktop 2 Colonnes Asymétrique & Équilibrée -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-start">
+<!-- COLONNE GAUCHE : Reconnaissance & Scan EAN (5 cols) -->
+<section aria-labelledby="section-reconnaissance" class="lg:col-span-5 flex flex-col gap-space-lg">
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-md flex flex-col gap-space-lg">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">qr_code_scanner</span>
+</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface" id="section-reconnaissance">Reconnaissance &amp; Scan</h2>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider bg-surface-container px-2 py-0.5 rounded">Étape 1/2</span>
+</div>
+<!-- Viseur Caméra Optique & Déclencheur -->
+<div class="relative overflow-hidden rounded-lg bg-surface-container-highest flex flex-col items-center justify-center p-space-xl text-center min-h-[220px]">
+<!-- Décoration Viseur Scan SVG -->
+<div class="absolute inset-4 pointer-events-none opacity-40">
+<svg class="w-full h-full" fill="none" stroke="currentColor" viewbox="0 0 200 200">
+<path class="text-primary" d="M 20 50 L 20 20 L 50 20" stroke-linecap="round" stroke-width="4"></path>
+<path class="text-primary" d="M 150 20 L 180 20 L 180 50" stroke-linecap="round" stroke-width="4"></path>
+<path class="text-primary" d="M 20 150 L 20 180 L 50 180" stroke-linecap="round" stroke-width="4"></path>
+<path class="text-primary" d="M 150 180 L 180 180 L 180 150" stroke-linecap="round" stroke-width="4"></path>
+<line class="text-secondary animate-pulse" stroke-dasharray="6 4" stroke-width="2" x1="25" x2="175" y1="100" y2="100"></line>
+</svg>
+</div>
+<div class="relative z-10 flex flex-col items-center gap-space-md">
+<div class="w-14 h-14 rounded-full bg-surface-container-lowest text-primary shadow-sm flex items-center justify-center">
+<span class="material-symbols-outlined text-[32px]">photo_camera</span>
+</div>
+<div class="space-y-1">
+<p class="font-headline-sm text-headline-sm text-on-surface">Webcam ou Caméra</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-xs">
+                Pointez le code-barres de l'aliment vers la caméra de votre ordinateur.
+              </p>
+</div>
+<button class="h-12 px-space-lg bg-primary text-on-primary font-label-lg text-label-lg rounded-lg shadow-sm hover:bg-primary-container transition-colors flex items-center justify-center gap-space-xs cursor-pointer" id="btn-toggle-camera" type="button">
+<span class="material-symbols-outlined text-[20px]">videocam</span>
+<span>Activer la caméra</span>
+</button>
+</div>
+</div>
+<!-- Clarification Open Food Facts & Responsabilité date -->
+<div class="bg-surface-container-low p-space-md rounded-lg flex items-start gap-space-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary shrink-0 text-[20px] mt-0.5">info</span>
+<p class="font-body-sm text-body-sm leading-relaxed">
+            Le scan Open Food Facts préremplit automatiquement le nom et la catégorie lorsqu'un réseau est actif. <span class="font-bold text-on-surface">La date doit toujours être vérifiée et renseignée par vos soins.</span>
+</p>
+</div>
+<div class="relative flex py-1 items-center">
+<div class="flex-grow bg-surface-container-high h-px"></div>
+<span class="flex-shrink mx-space-md text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wider">ou par code EAN</span>
+<div class="flex-grow bg-surface-container-high h-px"></div>
+</div>
+<!-- Saisie manuelle directe EAN -->
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-lg text-label-lg text-on-surface flex items-center justify-between" for="input-ean">
+<span>Code-barres (13 chiffres)</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-normal">Ex: 3017620422003</span>
+</label>
+<div class="flex gap-space-xs">
+<div class="relative flex-1">
+<span class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]">barcode</span>
+</span>
+<input class="w-full h-12 pl-10 pr-3 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md focus:bg-surface-container-lowest focus:outline-none" id="input-ean" onblur="this.style.outline='2px solid transparent';" onfocus="this.style.outline='2px solid #004c22'; this.style.outlineOffset='2px';" placeholder="Saisir les chiffres EAN..." style="outline: 2px solid transparent;" type="text" value="3017620422003"/>
+</div>
+<button class="h-12 px-space-md bg-secondary text-on-secondary font-label-lg text-label-lg rounded-lg hover:bg-on-secondary-container transition-colors shadow-sm flex items-center gap-space-xs cursor-pointer" id="btn-verify-ean" type="button">
+<span class="material-symbols-outlined text-[18px]">search</span>
+<span>Vérifier</span>
+</button>
+</div>
+</div>
+<!-- Encart didactique hors-ligne -->
+<div class="p-space-md rounded-lg bg-surface-container-low flex items-center gap-space-sm text-on-surface">
+<span class="material-symbols-outlined text-primary text-[22px]">wifi_off</span>
+<p class="font-body-sm text-body-sm">
+            En cas d'absence de caméra ou hors connexion, la saisie manuelle de la fiche reste <strong class="font-bold">100% opérationnelle</strong>.
+          </p>
+</div>
+</div>
+<!-- Métrique de fraîcheur & astuce conservation -->
+<div class="bg-surface-container-low p-space-md rounded-xl flex items-center gap-space-md">
+<div class="w-12 h-12 rounded-lg bg-primary-container text-on-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[24px]">eco</span>
+</div>
+<div class="space-y-0.5">
+<p class="font-label-lg text-label-lg text-on-surface">Zéro Gaspi Malin</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Un aliment bien classé au bon compartiment gagne jusqu'à 4 jours de fraîcheur optimale.
+          </p>
+</div>
+</div>
+</section>
+<!-- COLONNE DROITE : Fiche de l'aliment (7 cols) -->
+<section aria-labelledby="section-fiche-aliment" class="lg:col-span-7 flex flex-col gap-space-lg">
+<form class="bg-surface-container-lowest p-space-xl rounded-xl shadow-md flex flex-col gap-space-xl" id="form-produit" onsubmit="event.preventDefault(); window.simulerSauvegarde();">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">edit_note</span>
+</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface" id="section-fiche-aliment">Fiche de l'aliment</h2>
+</div>
+<span class="px-space-sm py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+            Produit identifié via Open Food Facts
+          </span>
+</div>
+<!-- 1. Nom de l'aliment -->
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-lg text-label-lg text-on-surface font-semibold flex items-center justify-between" for="aliment-nom">
+<span>Désignation de l'aliment *</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-normal">Modifiable librement</span>
+</label>
+<div class="relative">
+<input class="w-full h-12 px-space-md rounded-lg bg-surface-container-low text-on-surface font-headline-sm text-headline-sm focus:bg-surface-container-lowest focus:outline-none" id="aliment-nom" onblur="this.style.outline='2px solid transparent';" onfocus="this.style.outline='2px solid #004c22'; this.style.outlineOffset='2px';" required="" style="outline: 2px solid transparent;" type="text" value="Yaourt nature au lait entier"/>
+</div>
+</div>
+<!-- 2. Lieu de stockage (3 grands boutons radio accessibles) -->
+<fieldset aria-labelledby="label-stockage" class="flex flex-col gap-space-sm" role="radiogroup">
+<legend class="font-label-lg text-label-lg text-on-surface font-semibold" id="label-stockage">
+            Emplacement de conservation *
+          </legend>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-space-sm">
+<!-- Frigo (défaut sélectionné) -->
+<label class="group relative flex flex-col items-center justify-center p-space-md rounded-xl cursor-pointer bg-primary-container text-on-primary shadow-sm transition-all focus-within:ring-2 focus-within:ring-primary focus-within:ring-offset-2">
+<input checked="" class="sr-only" name="stockage_zone" onchange="window.updateStockageStyle(this)" type="radio" value="frigo"/>
+<span class="material-symbols-outlined text-[28px] mb-1">kitchen</span>
+<span class="font-headline-sm text-headline-sm">Réfrigérateur</span>
+<span class="font-label-sm text-label-sm opacity-80 mt-0.5">0°C à 4°C</span>
+<span class="absolute top-2 right-2 material-symbols-outlined text-[18px]">check_circle</span>
+</label>
+<!-- Placard -->
+<label class="group relative flex flex-col items-center justify-center p-space-md rounded-xl cursor-pointer bg-surface-container-low text-on-surface hover:bg-surface-container transition-all focus-within:ring-2 focus-within:ring-primary focus-within:ring-offset-2">
+<input class="sr-only" name="stockage_zone" onchange="window.updateStockageStyle(this)" type="radio" value="placard"/>
+<span class="material-symbols-outlined text-[28px] mb-1 text-on-surface-variant">inventory_2</span>
+<span class="font-headline-sm text-headline-sm">Placard</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-0.5">Température ambiante</span>
+<span class="absolute top-2 right-2 material-symbols-outlined text-[18px] hidden">check_circle</span>
+</label>
+<!-- Congélateur -->
+<label class="group relative flex flex-col items-center justify-center p-space-md rounded-xl cursor-pointer bg-surface-container-low text-on-surface hover:bg-surface-container transition-all focus-within:ring-2 focus-within:ring-primary focus-within:ring-offset-2">
+<input class="sr-only" name="stockage_zone" onchange="window.updateStockageStyle(this)" type="radio" value="congelateur"/>
+<span class="material-symbols-outlined text-[28px] mb-1 text-on-surface-variant">ac_unit</span>
+<span class="font-headline-sm text-headline-sm">Congélateur</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-0.5">-18°C</span>
+<span class="absolute top-2 right-2 material-symbols-outlined text-[18px] hidden">check_circle</span>
+</label>
+</div>
+</fieldset>
+<!-- 3. Type d'échéance : Distinction stricte DLC vs DDM -->
+<fieldset aria-labelledby="label-echeance" class="flex flex-col gap-space-sm" role="radiogroup">
+<div class="flex items-center justify-between">
+<legend class="font-label-lg text-label-lg text-on-surface font-semibold" id="label-echeance">
+              Règle d'échéance sanitaire *
+            </legend>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Obligation légale sanitaire</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-sm">
+<!-- Choix DLC -->
+<label class="relative flex items-start gap-space-sm p-space-md rounded-xl cursor-pointer bg-error-container text-on-error-container shadow-sm transition-all focus-within:ring-2 focus-within:ring-error focus-within:ring-offset-2">
+<input checked="" class="sr-only" name="echeance_type" onchange="window.updateEcheanceStyle(this)" type="radio" value="DLC"/>
+<span class="material-symbols-outlined text-[24px] shrink-0 text-error">warning</span>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm font-bold flex items-center gap-1.5">
+                  DLC • Impérative
+                </span>
+<span class="font-body-sm text-body-sm font-semibold text-error">« À consommer jusqu'au »</span>
+<span class="font-label-sm text-label-sm opacity-90 mt-1">Viandes fraîches, poissons, laitages crus, plats cuisinés. Risque bactériologique si dépassée.</span>
+</div>
+<span class="absolute top-3 right-3 material-symbols-outlined text-[18px] text-error font-bold">radio_button_checked</span>
+</label>
+<!-- Choix DDM -->
+<label class="relative flex items-start gap-space-sm p-space-md rounded-xl cursor-pointer bg-surface-container-low text-on-surface hover:bg-surface-container transition-all focus-within:ring-2 focus-within:ring-primary focus-within:ring-offset-2">
+<input class="sr-only" name="echeance_type" onchange="window.updateEcheanceStyle(this)" type="radio" value="DDM"/>
+<span class="material-symbols-outlined text-[24px] shrink-0 text-secondary">info</span>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm font-bold flex items-center gap-1.5">
+                  DDM • Souple
+                </span>
+<span class="font-body-sm text-body-sm font-semibold text-secondary">« À consommer de préférence »</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-1">Épicerie sèche, pâtes, conserves, café, miel. Consommable sans danger après date.</span>
+</div>
+<span class="absolute top-3 right-3 material-symbols-outlined text-[18px] text-on-surface-variant">radio_button_unchecked</span>
+</label>
+</div>
+</fieldset>
+<!-- 4. Date de péremption & Sélecteurs rapides -->
+<div class="flex flex-col gap-space-sm bg-surface-container-low p-space-md rounded-xl">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-xs">
+<label class="font-label-lg text-label-lg text-on-surface font-semibold flex items-center gap-1.5" for="aliment-date">
+<span class="material-symbols-outlined text-primary text-[20px]">calendar_today</span>
+<span>Date de péremption (JJ / MM / AAAA) *</span>
+</label>
+<span class="font-label-sm text-label-sm text-tertiary-container font-bold flex items-center gap-1" id="date-helper-state">
+<span class="material-symbols-outlined text-[14px]">schedule</span>
+<span>Expire dans 7 jours (31 mai 2024)</span>
+</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-12 gap-space-md items-center">
+<!-- Champ date standard accessible -->
+<div class="sm:col-span-6">
+<input class="w-full h-12 px-space-md rounded-lg bg-surface-container-lowest text-on-surface font-headline-sm text-headline-sm focus:outline-none" id="aliment-date" onblur="this.style.outline='2px solid transparent';" onchange="window.calculerExpiration(this.value)" onfocus="this.style.outline='2px solid #004c22'; this.style.outlineOffset='2px';" required="" style="outline: 2px solid transparent;" type="date" value="2024-05-31"/>
+</div>
+<!-- Raccourcis Rapides ergonomiques -->
+<div class="sm:col-span-6 flex items-center gap-space-xs">
+<button class="flex-1 h-12 px-space-xs rounded-lg bg-surface-container-lowest hover:bg-surface-container-high text-on-surface font-label-md text-label-md transition-colors text-center cursor-pointer shadow-sm" onclick="window.ajouterJours(2)" type="button">
+                +2 jours
+              </button>
+<button class="flex-1 h-12 px-space-xs rounded-lg bg-primary-fixed hover:bg-primary-fixed-dim text-on-primary-fixed font-label-md text-label-md transition-colors text-center cursor-pointer shadow-sm font-bold" onclick="window.ajouterJours(7)" type="button">
+                +1 semaine
+              </button>
+<button class="flex-1 h-12 px-space-xs rounded-lg bg-surface-container-lowest hover:bg-surface-container-high text-on-surface font-label-md text-label-md transition-colors text-center cursor-pointer shadow-sm" onclick="window.ajouterJours(30)" type="button">
+                +1 mois
+              </button>
+</div>
+</div>
+</div>
+<!-- 5. Bouton Principal d'enregistrement & Sécurité -->
+<div class="flex flex-col gap-space-sm pt-space-xs">
+<button class="w-full h-14 bg-primary-container text-on-primary rounded-xl font-headline-sm text-headline-sm font-bold shadow-md hover:bg-primary transition-all flex items-center justify-center gap-space-sm cursor-pointer active:scale-[0.99] focus:outline-none" id="btn-submit" onblur="this.style.outline='2px solid transparent';" onfocus="this.style.outline='2px solid #004c22'; this.style.outlineOffset='2px';" style="outline: 2px solid transparent;" type="submit">
+<span class="material-symbols-outlined text-[24px]">save</span>
+<span>Enregistrer dans le stock</span>
+</button>
+<div class="flex items-center justify-center gap-space-xs text-on-surface-variant font-label-md text-label-md">
+<span class="material-symbols-outlined text-secondary text-[18px]">lock</span>
+<span>Sauvegardé instantanément dans la mémoire locale (IndexedDB). Aucun compte requis.</span>
+</div>
+</div>
+</form>
+</section>
+</div>
+<!-- Notification Flottante Accessible Réutilisable -->
+<div class="fixed bottom-6 right-6 z-50 transform translate-y-32 opacity-0 transition-all duration-300 pointer-events-none" id="toast-confirmation">
+<div class="bg-primary text-on-primary px-space-lg py-space-md rounded-xl shadow-xl flex items-center gap-space-md">
+<span class="material-symbols-outlined text-[28px] text-primary-fixed">task_alt</span>
+<div class="flex flex-col">
+<p class="font-headline-sm text-headline-sm leading-tight">Produit ajouté !</p>
+<p class="font-body-sm text-body-sm text-primary-fixed leading-tight" id="toast-description">« Yaourt nature au lait entier » enregistré avec succès.</p>
+</div>
+</div>
+</div>
+</div>
+<script>
+  // Fonctions de calcul des dates raccourcis
+  window.ajouterJours = function(jours) {
+    const input = document.getElementById('aliment-date');
+    const base = new Date();
+    base.setDate(base.getDate() + jours);
+    const yyyy = base.getFullYear();
+    const mm = String(base.getMonth() + 1).padStart(2, '0');
+    const dd = String(base.getDate()).padStart(2, '0');
+    const formatted = `${yyyy}-${mm}-${dd}`;
+    input.value = formatted;
+    window.calculerExpiration(formatted);
+  };
+
+  window.calculerExpiration = function(val) {
+    if (!val) return;
+    const target = new Date(val);
+    const today = new Date();
+    today.setHours(0,0,0,0);
+    target.setHours(0,0,0,0);
+    
+    const diffTime = target - today;
+    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+    
+    const helper = document.getElementById('date-helper-state');
+    if (diffDays < 0) {
+      helper.innerHTML = `<span class="material-symbols-outlined text-[14px] text-error">error</span><span class="text-error font-bold">Date déjà dépassée (J${diffDays})</span>`;
+    } else if (diffDays === 0) {
+      helper.innerHTML = `<span class="material-symbols-outlined text-[14px] text-error">priority_high</span><span class="text-error font-bold">Expire aujourd'hui (J-0)</span>`;
+    } else if (diffDays <= 2) {
+      helper.innerHTML = `<span class="material-symbols-outlined text-[14px] text-tertiary-container">hourglass_top</span><span class="text-tertiary-container font-bold">Expire très bientôt (${diffDays} j restant${diffDays > 1 ? 's' : ''})</span>`;
+    } else {
+      helper.innerHTML = `<span class="material-symbols-outlined text-[14px] text-secondary">schedule</span><span class="text-on-surface-variant">Expire dans ${diffDays} jours (${target.toLocaleDateString('fr-FR', {day: 'numeric', month: 'short'})})</span>`;
+    }
+  };
+
+  // Mise à jour visuelle des zones de stockage
+  window.updateStockageStyle = function(radioEl) {
+    const fieldset = radioEl.closest('fieldset');
+    const labels = fieldset.querySelectorAll('label');
+    labels.forEach(l => {
+      const radio = l.querySelector('input[type="radio"]');
+      const checkIcon = l.querySelector('.material-symbols-outlined:last-child');
+      const icon = l.querySelector('.material-symbols-outlined:first-child');
+      
+      if (radio.checked) {
+        l.className = 'group relative flex flex-col items-center justify-center p-space-md rounded-xl cursor-pointer bg-primary-container text-on-primary shadow-sm transition-all focus-within:ring-2 focus-within:ring-primary focus-within:ring-offset-2';
+        if (checkIcon) checkIcon.classList.remove('hidden');
+        if (icon) icon.className = 'material-symbols-outlined text-[28px] mb-1';
+      } else {
+        l.className = 'group relative flex flex-col items-center justify-center p-space-md rounded-xl cursor-pointer bg-surface-container-low text-on-surface hover:bg-surface-container transition-all focus-within:ring-2 focus-within:ring-primary focus-within:ring-offset-2';
+        if (checkIcon) checkIcon.classList.add('hidden');
+        if (icon) icon.className = 'material-symbols-outlined text-[28px] mb-1 text-on-surface-variant';
+      }
+    });
+  };
+
+  // Mise à jour visuelle DLC / DDM
+  window.updateEcheanceStyle = function(radioEl) {
+    const fieldset = radioEl.closest('fieldset');
+    const labels = fieldset.querySelectorAll('label');
+    labels.forEach(l => {
+      const radio = l.querySelector('input[type="radio"]');
+      const checkIcon = l.querySelector('.material-symbols-outlined:last-child');
+      
+      if (radio.checked) {
+        if (radio.value === 'DLC') {
+          l.className = 'relative flex items-start gap-space-sm p-space-md rounded-xl cursor-pointer bg-error-container text-on-error-container shadow-sm transition-all focus-within:ring-2 focus-within:ring-error focus-within:ring-offset-2';
+          checkIcon.textContent = 'radio_button_checked';
+          checkIcon.className = 'absolute top-3 right-3 material-symbols-outlined text-[18px] text-error font-bold';
+        } else {
+          l.className = 'relative flex items-start gap-space-sm p-space-md rounded-xl cursor-pointer bg-secondary-container text-on-secondary-container shadow-sm transition-all focus-within:ring-2 focus-within:ring-secondary focus-within:ring-offset-2';
+          checkIcon.textContent = 'radio_button_checked';
+          checkIcon.className = 'absolute top-3 right-3 material-symbols-outlined text-[18px] text-secondary font-bold';
+        }
+      } else {
+        l.className = 'relative flex items-start gap-space-sm p-space-md rounded-xl cursor-pointer bg-surface-container-low text-on-surface hover:bg-surface-container transition-all focus-within:ring-2 focus-within:ring-primary focus-within:ring-offset-2';
+        checkIcon.textContent = 'radio_button_unchecked';
+        checkIcon.className = 'absolute top-3 right-3 material-symbols-outlined text-[18px] text-on-surface-variant';
+      }
+    });
+  };
+
+  // Notification d'enregistrement avec micro-interaction
+  window.simulerSauvegarde = function() {
+    const nom = document.getElementById('aliment-nom').value || 'Aliment';
+    const toast = document.getElementById('toast-confirmation');
+    const desc = document.getElementById('toast-description');
+    
+    desc.textContent = `« ${nom} » enregistré avec succès dans votre stock.`;
+    toast.classList.remove('translate-y-32', 'opacity-0');
+    toast.classList.add('translate-y-0', 'opacity-100');
+    
+    setTimeout(() => {
+      toast.classList.remove('translate-y-0', 'opacity-100');
+      toast.classList.add('translate-y-32', 'opacity-0');
+    }, 3800);
+  };
+
+  // Interaction bouton caméra
+  document.getElementById('btn-toggle-camera').addEventListener('click', function() {
+    const label = this.querySelector('span:last-child');
+    if (label.textContent.includes('Activer')) {
+      label.textContent = 'Arrêter la caméra';
+      this.classList.replace('bg-primary', 'bg-tertiary');
+    } else {
+      label.textContent = 'Activer la caméra';
+      this.classList.replace('bg-tertiary', 'bg-primary');
+    }
+  });
+
+  // Interaction vérification EAN
+  document.getElementById('btn-verify-ean').addEventListener('click', function() {
+    const input = document.getElementById('input-ean');
+    if (input.value.trim() === '3017620422003') {
+      document.getElementById('aliment-nom').value = 'Pâte à tartiner noisettes cacao (ex: Nutella)';
+    } else {
+      document.getElementById('aliment-nom').value = 'Produit reconnu EAN ' + input.value.trim();
+    }
+    document.getElementById('aliment-nom').focus();
+  });
+</script></main><footer class="w-full bg-surface-container-low shadow-[0_1px_8px_rgba(0,0,0,0.04)] mt-space-xl"><div class="max-w-7xl mx-auto px-margin md:px-margin-tablet lg:px-margin-desktop py-space-lg flex flex-col md:flex-row items-center justify-between gap-space-md font-body-sm text-body-sm text-on-surface-variant"><div class="flex items-center gap-space-xs"><span class="font-label-md text-label-md text-primary font-bold">FrigoMalin</span><span>•</span><span>Application locale autonome (IndexedDB)</span><span>•</span><span>Respect strict de la vie privée</span></div><div class="flex items-center gap-space-md text-on-surface-variant"><span class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-[16px] text-secondary">shield</span>Zéro pisteurs</span><span>•</span><span>Alimenté par Open Food Facts</span></div></div></footer></body></html>

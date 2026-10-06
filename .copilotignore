@@ -1,0 +1,37 @@
+# .copilotignore (syntaxe .gitignore, pas de négation « ! »)
+
+# 1. Secrets et configuration locale
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.pfx
+.claude/settings.local.json
+
+# 2. Données réelles d'utilisateurs (exports de test)
+exports/
+**/*-reel.json
+data/private/
+
+# 3. Dépendances, builds et rapports générés
+node_modules/
+dist/
+coverage/
+playwright-report/
+test-results/
+
+# 4. Fichiers volumineux ou binaires sans valeur pour l'IA
+package-lock.json
+*.min.js
+*.min.css
+*.map
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.webp
+*.ico
+*.woff2
+*.pdf
+*.zip

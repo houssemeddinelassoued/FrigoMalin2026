@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+
+<html lang="fr"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "surface-variant": "#d9e3f6", "secondary-fixed": "#a6f2d1", "primary": "#004c22", "tertiary-container": "#92400e", "surface-container-lowest": "#ffffff", "tertiary-fixed": "#ffdbcb", "on-error-container": "#93000a", "secondary-container": "#a6f2d1", "error-container": "#ffdad6", "on-primary-fixed": "#00210b", "on-surface-variant": "#404940", "on-error": "#ffffff", "surface-bright": "#f8f9ff", "on-tertiary-fixed-variant": "#7a3000", "tertiary-fixed-dim": "#ffb693", "secondary": "#1b6b51", "surface-dim": "#d0dbed", "on-background": "#121c2a", "surface-container-low": "#eff4ff", "on-surface": "#121c2a", "surface-tint": "#1f6c3a", "inverse-primary": "#8bd79b", "outline": "#707a6f", "tertiary": "#712c00", "outline-variant": "#bfc9bd", "background": "#f8f9ff", "on-secondary-fixed": "#002116", "surface-container-high": "#dee9fc", "error": "#ba1a1a", "on-secondary": "#ffffff", "on-primary": "#ffffff", "on-tertiary-container": "#ffc2a5", "surface-container": "#e6eeff", "primary-fixed-dim": "#8bd79b", "on-primary-container": "#93e0a2", "inverse-on-surface": "#eaf1ff", "on-secondary-fixed-variant": "#00513b", "surface-container-highest": "#d9e3f6", "primary-fixed": "#a6f4b5", "inverse-surface": "#27313f", "on-tertiary-fixed": "#341000", "on-secondary-container": "#237157", "primary-container": "#166534", "secondary-fixed-dim": "#8bd6b6", "on-tertiary": "#ffffff", "on-primary-fixed-variant": "#005226", "surface": "#f8f9ff" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "margin-desktop": "3rem", "margin": "1rem", "space-md": "1rem", "gutter": "1rem", "gutter-desktop": "1.5rem", "space-lg": "1.5rem", "space-xl": "2rem", "margin-tablet": "2rem", "space-sm": "0.5rem", "space-xs": "0.25rem" }, fontFamily: { "headline-xl-mobile": ["\"Source Sans 3\""], "headline-xl": ["\"Source Sans 3\""], "label-sm": ["\"Source Sans 3\""], "headline-sm": ["\"Source Sans 3\""], "body-md": ["\"Source Sans 3\""], "body-lg": ["\"Source Sans 3\""], "body-sm": ["\"Source Sans 3\""], "headline-lg": ["\"Source Sans 3\""], "label-lg": ["\"Source Sans 3\""], "label-md": ["\"Source Sans 3\""], "body": ["\"Source Sans 3\""], "headline": ["\"Source Sans 3\""], "label": ["\"Source Sans 3\""], "title": ["\"Source Sans 3\""], "display": ["\"Source Sans 3\""], "sans": ["\"Source Sans 3\""], "icon": ["\"Material Symbols Outlined\""] }, fontSize: { "headline-xl-mobile": ["26px", { lineHeight: "34px", letterSpacing: "-0.015em", fontWeight: "700" }], "headline-xl": ["32px", { lineHeight: "40px", letterSpacing: "-0.02em", fontWeight: "700" }], "label-sm": ["11px", { lineHeight: "16px", letterSpacing: "0.04em", fontWeight: "700" }], "headline-sm": ["20px", { lineHeight: "28px", fontWeight: "600" }], "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }], "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }], "body-sm": ["14px", { lineHeight: "20px", fontWeight: "400" }], "headline-lg": ["24px", { lineHeight: "32px", letterSpacing: "-0.01em", fontWeight: "600" }], "label-lg": ["15px", { lineHeight: "20px", letterSpacing: "0.01em", fontWeight: "600" }], "label-md": ["13px", { lineHeight: "18px", letterSpacing: "0.02em", fontWeight: "600" }] } } } };</script><style>@layer base{html,body{width:100%;margin:0;padding:0;min-height:100%;}body{overscroll-behavior-y:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-body-md text-on-surface flex flex-col min-h-screen antialiased"><header class="fixed top-0 inset-x-0 z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] pt-safe"><div class="h-16 px-margin flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0"><div class="w-10 h-10 rounded-lg bg-primary-container text-on-primary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-[24px]">kitchen</span></div><div class="flex flex-col min-w-0"><div class="flex items-center gap-space-xs"><span class="font-headline-sm text-headline-sm text-primary leading-tight font-bold tracking-tight truncate">FrigoMalin</span><span aria-hidden="true" class="w-2 h-2 rounded-full bg-secondary shrink-0"></span></div><span class="font-label-sm text-label-sm text-on-surface-variant leading-none truncate">Mon Stock</span></div></div><div class="flex items-center gap-space-sm shrink-0"><div class="hidden xs:inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span><span>En ligne</span></div><div aria-label="Profil utilisateur" class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 flex flex-col relative w-full px-margin pt-16 pb-28 bg-surface min-h-[calc(100vh-4rem)]"><div class="flex flex-col w-full pb-6 space-y-5">
+<!-- En-tête de page & Contexte -->
+<section class="flex flex-col gap-3">
+<div class="flex items-start justify-between gap-2">
+<div class="flex flex-col min-w-0">
+<h1 class="font-headline-xl-mobile text-headline-xl-mobile text-primary tracking-tight font-bold">Mon stock</h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-primary">calendar_today</span>
+<span>Date de référence : 24 mai 2024</span>
+</p>
+</div>
+<!-- Badge discret réseau -->
+<div aria-live="polite" class="flex items-center gap-1.5 bg-surface-container px-2.5 py-1.5 rounded-full shrink-0 shadow-sm" role="status">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">cloud_off</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Mode hors ligne actif</span>
+</div>
+</div>
+<!-- Message de synchronisation locale discrète -->
+<div class="flex items-center gap-2 px-3 py-2 rounded-lg bg-surface-container-low text-on-surface-variant text-label-sm font-label-sm">
+<span class="material-symbols-outlined text-[16px] text-secondary">sync_saved_locally</span>
+<span>Données locales sauvegardées sur cet appareil</span>
+</div>
+<!-- Résumé chiffré clair : 2 tuiles récapitulatives -->
+<div class="grid grid-cols-2 gap-3 pt-1">
+<div class="bg-surface-container-lowest p-3.5 rounded-xl shadow-sm flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed shrink-0">
+<span class="material-symbols-outlined text-[22px]">inventory_2</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold leading-tight">6</span>
+<span class="font-label-md text-label-md text-on-surface-variant truncate">produits en stock</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-3.5 rounded-xl shadow-sm flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-tertiary-fixed flex items-center justify-center text-on-tertiary-fixed shrink-0">
+<span class="material-symbols-outlined text-[22px]">hourglass_top</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-headline-sm text-tertiary font-bold leading-tight">3</span>
+<span class="font-label-md text-label-md text-on-surface-variant truncate">dates proches</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Bouton d'action principal -->
+<section class="pt-1">
+<button aria-label="Ajouter un nouveau produit au stock" class="w-full min-h-[48px] px-4 py-3 bg-primary-container hover:bg-primary active:bg-primary text-on-primary font-label-lg text-label-lg rounded-xl flex items-center justify-center gap-2 shadow-md transition-colors" type="button">
+<span class="material-symbols-outlined text-[22px]">add_circle</span>
+<span>+ Ajouter un produit</span>
+</button>
+</section>
+<!-- Section 1 : À utiliser en priorité -->
+<section class="space-y-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary text-[20px]">priority_high</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold">À utiliser en priorité</h2>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-bold">2 urgents</span>
+</div>
+<!-- Carte 1: Filet de poulet fermier (DLC aujourd'hui) -->
+<article class="bg-surface-container-lowest rounded-xl p-4 shadow-sm flex flex-col gap-3">
+<div class="flex items-start justify-between gap-2">
+<div class="flex items-start gap-3 min-w-0">
+<img class="w-14 h-14 rounded-lg object-cover bg-surface-variant shrink-0" data-alt="Emballage hermétique de filet de poulet fermier frais sur une planche en bois claire avec brins de romarin, tonalités naturelles et éclairage doux de cuisine domestique." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4NJdR22I1PXBldG2SSmLQKwCQ37qeT4X5Qb3F2A6jb4VOMm5i3rckwgeDVRNFf--3ir1OwyfGfuGvD6j9SnPYLPUybZMDDcsFA_BPtlDsUAgnTZ-eSMOIcgzJ9nkT01PTV7qHuW0SSlMwTNoyDk-DX74mJOR31BlcK48PyIkbuXHeXNJ-IlYxcej15x4Ypxra9PvYAIuT064F9j7SOwUqbXegaBNmfWjG4gtlmti0OTB4Nk92bIGGsA"/>
+<div class="flex flex-col min-w-0">
+<h3 class="font-headline-sm text-headline-sm text-on-surface leading-tight truncate">Filet de poulet fermier</h3>
+<span class="font-body-sm text-body-sm text-on-surface-variant">350 g • Réfrigérateur</span>
+<div class="mt-1.5 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-tertiary-fixed text-on-tertiary-fixed-variant self-start shadow-sm">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+<span class="font-label-md text-label-md font-semibold">À consommer aujourd'hui (DLC 24/05/2024)</span>
+</div>
+</div>
+</div>
+<button aria-label="Options pour Filet de poulet fermier" class="w-11 h-11 flex items-center justify-center text-on-surface-variant hover:text-on-surface rounded-lg shrink-0" onclick="openConfirmModal('Filet de poulet fermier')" type="button">
+<span class="material-symbols-outlined text-[22px]">more_vert</span>
+</button>
+</div>
+<!-- Actions Carte 1 -->
+<div class="flex items-center gap-2 pt-1">
+<button class="flex-1 min-h-[44px] px-3 py-2 rounded-lg bg-secondary-fixed text-on-secondary-fixed font-label-md text-label-md font-semibold flex items-center justify-center gap-1.5 transition-colors active:opacity-80" type="button">
+<span class="material-symbols-outlined text-[18px]">restaurant</span>
+<span>Consommé</span>
+</button>
+<button class="flex-1 min-h-[44px] px-3 py-2 rounded-lg bg-surface-container text-secondary font-label-md text-label-md font-semibold flex items-center justify-center gap-1.5 transition-colors active:opacity-80" type="button">
+<span class="material-symbols-outlined text-[18px]">ac_unit</span>
+<span>Congelé</span>
+</button>
+</div>
+</article>
+<!-- Carte 2: Crème fraîche épaisse (DLC à J+2) -->
+<article class="bg-surface-container-lowest rounded-xl p-4 shadow-sm flex flex-col gap-3">
+<div class="flex items-start justify-between gap-2">
+<div class="flex items-start gap-3 min-w-0">
+<img class="w-14 h-14 rounded-lg object-cover bg-surface-variant shrink-0" data-alt="Pot de crème fraîche épaisse de Normandie posé sur une table en céramique blanche et beige, ambiance épicerie fine et fraîcheur du terroir." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPEleN78kDC3qsBVesfWZpElsAKg0Fgb9-p7Ww6RdJM18_q7vDMMJbM61fqbRPIScb19k0n1ewk_aoHHnsSkhH-de_u_Wp6Sr_jie6DZUPjncmhE3AQtioqcYKKl3n8Die5rnltn0Pz06woRt6HTDazsgMM2xWogE-KvCUqE0kNP87jLlQ7oYy6SyIdD0LmoT-7KLHwDRQSD6gJ9yH2ogGy5ZQOdJf0_crpjW0wUSyCgYfM4IYCr6XwA"/>
+<div class="flex flex-col min-w-0">
+<h3 class="font-headline-sm text-headline-sm text-on-surface leading-tight truncate">Crème fraîche épaisse</h3>
+<span class="font-body-sm text-body-sm text-on-surface-variant">20 cl • Réfrigérateur</span>
+<div class="mt-1.5 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-tertiary-fixed text-on-tertiary-fixed-variant self-start shadow-sm">
+<span class="material-symbols-outlined text-[16px]">hourglass_bottom</span>
+<span class="font-label-md text-label-md font-semibold">À consommer sous 2 jours (DLC 26/05/2024)</span>
+</div>
+</div>
+</div>
+<button aria-label="Options pour Crème fraîche épaisse" class="w-11 h-11 flex items-center justify-center text-on-surface-variant hover:text-on-surface rounded-lg shrink-0" onclick="openConfirmModal('Crème fraîche épaisse')" type="button">
+<span class="material-symbols-outlined text-[22px]">more_vert</span>
+</button>
+</div>
+<!-- Actions Carte 2 -->
+<div class="flex items-center gap-2 pt-1">
+<button class="flex-1 min-h-[44px] px-3 py-2 rounded-lg bg-secondary-fixed text-on-secondary-fixed font-label-md text-label-md font-semibold flex items-center justify-center gap-1.5 transition-colors active:opacity-80" type="button">
+<span class="material-symbols-outlined text-[18px]">restaurant</span>
+<span>Consommé</span>
+</button>
+<button class="flex-1 min-h-[44px] px-3 py-2 rounded-lg bg-surface-container text-secondary font-label-md text-label-md font-semibold flex items-center justify-center gap-1.5 transition-colors active:opacity-80" type="button">
+<span class="material-symbols-outlined text-[18px]">ac_unit</span>
+<span>Congelé</span>
+</button>
+</div>
+</article>
+</section>
+<!-- Section 2 : Tout le stock actif -->
+<section class="space-y-3 pt-2">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">sort</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Tout le stock actif</h2>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Trié par date croissante</span>
+</div>
+<!-- Carte 3 : DLC Dépassée (Jambon blanc) -->
+<article class="bg-surface-container-lowest rounded-xl p-4 shadow-sm flex flex-col gap-3">
+<div class="flex items-start justify-between gap-2">
+<div class="flex items-start gap-3 min-w-0">
+<div class="w-14 h-14 rounded-lg bg-error-container flex items-center justify-center text-on-error-container shrink-0">
+<span class="material-symbols-outlined text-[28px]">warning</span>
+</div>
+<div class="flex flex-col min-w-0">
+<h3 class="font-headline-sm text-headline-sm text-on-surface leading-tight truncate">Jambon blanc cuit</h3>
+<span class="font-body-sm text-body-sm text-on-surface-variant">160 g • Réfrigérateur</span>
+<div class="mt-1.5 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-error-container text-on-error-container self-start shadow-sm">
+<span class="material-symbols-outlined text-[16px]">dangerous</span>
+<span class="font-label-md text-label-md font-bold">DLC dépassée (22/05/2024) — À jeter</span>
+</div>
+</div>
+</div>
+<button aria-label="Options pour Jambon blanc cuit" class="w-11 h-11 flex items-center justify-center text-on-surface-variant hover:text-on-surface rounded-lg shrink-0" onclick="openConfirmModal('Jambon blanc cuit')" type="button">
+<span class="material-symbols-outlined text-[22px]">more_vert</span>
+</button>
+</div>
+<!-- Action unique critique -->
+<div class="pt-1">
+<button class="w-full min-h-[44px] px-3 py-2 rounded-lg bg-error text-on-error font-label-md text-label-md font-semibold flex items-center justify-center gap-1.5 transition-colors shadow-sm active:opacity-90" onclick="openConfirmModal('Jambon blanc cuit')" type="button">
+<span class="material-symbols-outlined text-[18px]">delete_forever</span>
+<span>Retirer du stock</span>
+</button>
+</div>
+</article>
+<!-- Carte 4 : DDM Dépassée (Biscuits pur beurre) -->
+<article class="bg-surface-container-lowest rounded-xl p-4 shadow-sm flex flex-col gap-3">
+<div class="flex items-start justify-between gap-2">
+<div class="flex items-start gap-3 min-w-0">
+<img class="w-14 h-14 rounded-lg object-cover bg-surface-variant shrink-0" data-alt="Paquet artisanal de galettes pur beurre bretonnes dans un cellier chaleureux en bois clair, lumière tamisée et conviviale." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCROUzlgtlBStF4nWmSMktkJ1l4TWlLKB7zH8LDqlqKip2OZnNyNbYRSTdFBlhjHpy7m0Eo3sRbvtzbngPW96AXCNb3P-wemmeJPx7dVuRrhJ3F4m46j9zPXHEA9Juo8jHav5Nh3Q1o2sXhaMi7FlIOZRzrji4EMkV9ao_IU9k_t1N3i0pdtG8yPCtYKUWF1tc0x7lGVMRGZr5YVCXM7ofO9Kz9D3Kh73mZW07EcN3eDqrMelzDWRswXA"/>
+<div class="flex flex-col min-w-0">
+<h3 class="font-headline-sm text-headline-sm text-on-surface leading-tight truncate">Biscuits pur beurre</h3>
+<span class="font-body-sm text-body-sm text-on-surface-variant">200 g • Placard</span>
+<div class="mt-1.5 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-surface-container-high text-secondary self-start shadow-sm">
+<span class="material-symbols-outlined text-[16px]">info</span>
+<span class="font-label-md text-label-md font-semibold">DDM dépassée (15/05) — Peut encore être consommé</span>
+</div>
+</div>
+</div>
+<button aria-label="Options pour Biscuits pur beurre" class="w-11 h-11 flex items-center justify-center text-on-surface-variant hover:text-on-surface rounded-lg shrink-0" onclick="openConfirmModal('Biscuits pur beurre')" type="button">
+<span class="material-symbols-outlined text-[22px]">more_vert</span>
+</button>
+</div>
+<!-- Actions Carte 4 -->
+<div class="flex items-center gap-2 pt-1">
+<button class="flex-1 min-h-[44px] px-3 py-2 rounded-lg bg-secondary-fixed text-on-secondary-fixed font-label-md text-label-md font-semibold flex items-center justify-center gap-1.5 transition-colors active:opacity-80" type="button">
+<span class="material-symbols-outlined text-[18px]">restaurant</span>
+<span>Consommé</span>
+</button>
+<button aria-label="Modifier ou supprimer" class="min-h-[44px] min-w-[44px] px-3 py-2 rounded-lg bg-surface-container text-on-surface-variant flex items-center justify-center" onclick="openConfirmModal('Biscuits pur beurre')" type="button">
+<span class="material-symbols-outlined text-[20px]">more_horiz</span>
+</button>
+</div>
+</article>
+<!-- Carte 5 : Date lointaine (Petits pois surgelés) -->
+<article class="bg-surface-container-lowest rounded-xl p-4 shadow-sm flex flex-col gap-3">
+<div class="flex items-start justify-between gap-2">
+<div class="flex items-start gap-3 min-w-0">
+<div class="w-14 h-14 rounded-lg bg-surface-container flex items-center justify-center text-secondary shrink-0">
+<span class="material-symbols-outlined text-[26px]">ac_unit</span>
+</div>
+<div class="flex flex-col min-w-0">
+<h3 class="font-headline-sm text-headline-sm text-on-surface leading-tight truncate">Petits pois surgelés</h3>
+<span class="font-body-sm text-body-sm text-on-surface-variant">600 g • Congélateur</span>
+<div class="mt-1.5 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-secondary-fixed text-on-secondary-fixed self-start shadow-sm">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+<span class="font-label-md text-label-md font-medium">DDM 12/12/2024 (tranquille)</span>
+</div>
+</div>
+</div>
+<button aria-label="Options pour Petits pois surgelés" class="w-11 h-11 flex items-center justify-center text-on-surface-variant hover:text-on-surface rounded-lg shrink-0" onclick="openConfirmModal('Petits pois surgelés')" type="button">
+<span class="material-symbols-outlined text-[22px]">more_vert</span>
+</button>
+</div>
+<!-- Actions Carte 5 -->
+<div class="flex items-center gap-2 pt-1">
+<button class="flex-1 min-h-[44px] px-3 py-2 rounded-lg bg-secondary-fixed text-on-secondary-fixed font-label-md text-label-md font-semibold flex items-center justify-center gap-1.5 transition-colors active:opacity-80" type="button">
+<span class="material-symbols-outlined text-[18px]">restaurant</span>
+<span>Consommé</span>
+</button>
+<button aria-label="Modifier ou supprimer" class="min-h-[44px] min-w-[44px] px-3 py-2 rounded-lg bg-surface-container text-on-surface-variant flex items-center justify-center" onclick="openConfirmModal('Petits pois surgelés')" type="button">
+<span class="material-symbols-outlined text-[20px]">more_horiz</span>
+</button>
+</div>
+</article>
+</section>
+<!-- Encarts pédagogiques & États informatifs secondaires pliables -->
+<section class="space-y-3 pt-4">
+<div class="flex items-center gap-2 text-on-surface">
+<span class="material-symbols-outlined text-secondary text-[20px]">help_center</span>
+<h2 class="font-label-lg text-label-lg font-bold">Aperçus du système &amp; diagnostics</h2>
+</div>
+<!-- Pliable 1 : État vide (empty state preview) -->
+<details class="group bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden">
+<summary class="min-h-[48px] px-4 py-3 flex items-center justify-between cursor-pointer list-none select-none text-on-surface font-label-md text-label-md font-semibold">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-on-surface-variant text-[20px]">shelves</span>
+<span>Prévisualisation : État stock vide</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-[20px] transition-transform group-open:rotate-180">expand_more</span>
+</summary>
+<div class="px-4 pb-4 pt-2">
+<div class="p-4 rounded-xl bg-surface-container flex flex-col items-center text-center gap-2">
+<div class="w-12 h-12 rounded-full bg-surface-container-lowest flex items-center justify-center text-on-surface-variant shadow-sm">
+<span class="material-symbols-outlined text-[26px]">kitchen</span>
+</div>
+<p class="font-headline-sm text-headline-sm text-on-surface font-semibold">Votre stock est vide</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-xs">
+            Ajoutez votre premier produit pour suivre sa fraîcheur et cuisiner malin sans rien jeter.
+          </p>
+<button class="mt-2 min-h-[44px] px-4 py-2 bg-primary-container text-on-primary font-label-md text-label-md rounded-lg flex items-center gap-1.5 shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">add</span>
+<span>Ajoutez votre premier produit</span>
+</button>
+</div>
+</div>
+</details>
+<!-- Pliable 2 : État erreur réseau / stockage -->
+<details class="group bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden">
+<summary class="min-h-[48px] px-4 py-3 flex items-center justify-between cursor-pointer list-none select-none text-on-surface font-label-md text-label-md font-semibold">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary text-[20px]">sync_problem</span>
+<span>Prévisualisation : Erreur de lecture locale</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-[20px] transition-transform group-open:rotate-180">expand_more</span>
+</summary>
+<div class="px-4 pb-4 pt-2">
+<div class="p-3.5 rounded-xl bg-error-container text-on-error-container flex items-start gap-3">
+<span class="material-symbols-outlined text-[22px] shrink-0 mt-0.5">error_outline</span>
+<div class="flex flex-col gap-1 min-w-0">
+<p class="font-label-md text-label-md font-bold">Erreur de lecture locale</p>
+<p class="font-body-sm text-body-sm leading-snug">
+              Impossible d'accéder au stockage de l'appareil. Vérifiez les autorisations de stockage de votre navigateur.
+            </p>
+<div class="pt-2">
+<button class="min-h-[44px] px-3.5 py-1.5 rounded-lg bg-surface-container-lowest text-error font-label-md text-label-md font-bold shadow-sm inline-flex items-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[18px]">refresh</span>
+<span>Réessayer</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</details>
+</section>
+<!-- Boîte de dialogue accessible de confirmation de suppression (Modal intégrée) -->
+<aside aria-labelledby="modal-title" aria-modal="true" class="hidden fixed inset-0 z-50 bg-on-surface/40 backdrop-blur-sm p-4 flex items-end sm:items-center justify-center" id="delete-modal" role="dialog">
+<div class="w-full max-w-sm bg-surface-container-lowest rounded-2xl p-5 shadow-2xl flex flex-col gap-4 animate-in fade-in zoom-in-95 duration-150">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-error-container text-on-error-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[22px]">delete_forever</span>
+</div>
+<div class="flex flex-col min-w-0">
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold leading-tight" id="modal-title">Supprimer du stock ?</h3>
+<span class="font-label-md text-label-md text-on-surface-variant truncate" id="modal-item-name">Produit sélectionné</span>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface">
+        Confirmer la suppression de ce produit ? Cette action est irréversible.
+      </p>
+<div class="flex items-center justify-end gap-2.5 pt-2">
+<button class="min-h-[44px] px-4 py-2.5 rounded-xl bg-surface-container text-on-surface font-label-lg text-label-lg active:bg-surface-variant" onclick="closeConfirmModal()" type="button">
+          Annuler
+        </button>
+<button class="min-h-[44px] px-4 py-2.5 rounded-xl bg-error text-on-error font-label-lg text-label-lg shadow-sm active:opacity-90" onclick="confirmDeleteAction()" type="button">
+          Supprimer
+        </button>
+</div>
+</div>
+</aside>
+</div>
+<script>
+  let targetItemToDelete = null;
+
+  function openConfirmModal(itemName) {
+    targetItemToDelete = itemName;
+    const modal = document.getElementById('delete-modal');
+    const label = document.getElementById('modal-item-name');
+    if (label) label.textContent = itemName;
+    if (modal) modal.classList.remove('hidden');
+  }
+
+  function closeConfirmModal() {
+    const modal = document.getElementById('delete-modal');
+    if (modal) modal.classList.add('hidden');
+    targetItemToDelete = null;
+  }
+
+  function confirmDeleteAction() {
+    closeConfirmModal();
+  }
+</script></main><nav class="fixed bottom-0 inset-x-0 z-50 pb-safe bg-surface-container-lowest/95 backdrop-blur-xl shadow-[0_-2px_12px_rgba(0,0,0,0.05)]" data-active-classes="text-primary font-bold"><div class="flex justify-around items-center h-20 px-space-sm max-w-md mx-auto"><a aria-current="page" aria-label="Mon stock" class="flex flex-col items-center justify-center gap-1 min-w-[64px] min-h-[48px] py-1 transition-colors focus:outline-none focus:ring-2 focus:ring-primary rounded-lg text-primary font-bold" data-path="mon-stock" href="#"><span class="material-symbols-outlined text-[24px]">inventory_2</span><span class="font-label-md text-label-md tracking-tight">Mon stock</span></a><a aria-label="Recettes anti-gaspi" class="flex flex-col items-center justify-center gap-1 min-w-[64px] min-h-[48px] py-1 text-on-surface-variant hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary rounded-lg" data-path="recettes" href="#"><span class="material-symbols-outlined text-[24px]">menu_book</span><span class="font-label-md text-label-md tracking-tight">Recettes</span></a><a aria-label="Mon bilan écologique et économies" class="flex flex-col items-center justify-center gap-1 min-w-[64px] min-h-[48px] py-1 text-on-surface-variant hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary rounded-lg" data-path="mon-bilan" href="#"><span class="material-symbols-outlined text-[24px]">verified</span><span class="font-label-md text-label-md tracking-tight">Mon bilan</span></a></div></nav></body></html>

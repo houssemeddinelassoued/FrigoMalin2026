@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+
+<html lang="fr"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,300..900;1,300..900&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"primary-fixed":"#a6f4b5","surface-bright":"#f8f9ff","on-surface-variant":"#404940","on-error-container":"#93000a","on-primary":"#ffffff","on-surface":"#121c2a","primary-container":"#166534","secondary-fixed":"#a6f2d1","inverse-primary":"#8bd79b","tertiary-container":"#92400e","inverse-on-surface":"#eaf1ff","outline-variant":"#bfc9bd","tertiary-fixed":"#ffdbcb","on-tertiary-fixed-variant":"#7a3000","surface-tint":"#1f6c3a","surface-container-lowest":"#ffffff","surface-dim":"#d0dbed","primary":"#004c22","on-primary-fixed-variant":"#005226","on-secondary-fixed":"#002116","surface-container-highest":"#d9e3f6","tertiary":"#712c00","on-tertiary-fixed":"#341000","on-primary-fixed":"#00210b","on-tertiary":"#ffffff","secondary-container":"#a6f2d1","on-background":"#121c2a","error-container":"#ffdad6","surface-container-low":"#eff4ff","primary-fixed-dim":"#8bd79b","inverse-surface":"#27313f","tertiary-fixed-dim":"#ffb693","on-secondary-fixed-variant":"#00513b","background":"#f8f9ff","surface-variant":"#d9e3f6","on-secondary":"#ffffff","surface-container-high":"#dee9fc","on-tertiary-container":"#ffc2a5","secondary":"#1b6b51","on-error":"#ffffff","surface-container":"#e6eeff","on-primary-container":"#93e0a2","on-secondary-container":"#237157","error":"#ba1a1a","secondary-fixed-dim":"#8bd6b6","surface":"#f8f9ff","outline":"#707a6f"},borderRadius:{DEFAULT:"0.25rem",lg:"0.5rem",xl:"0.75rem",full:"9999px"},spacing:{"space-sm":"0.5rem","space-xs":"0.25rem",gutter:"1rem","space-lg":"1.5rem","gutter-desktop":"1.5rem","space-xl":"2rem",margin:"1rem","margin-desktop":"3rem","margin-tablet":"2rem","space-md":"1rem"},fontFamily:{"body-md":["\"Source Sans 3\""],"headline-sm":["\"Source Sans 3\""],"headline-xl-mobile":["\"Source Sans 3\""],"headline-xl":["\"Source Sans 3\""],"body-lg":["\"Source Sans 3\""],"label-md":["\"Source Sans 3\""],"body-sm":["\"Source Sans 3\""],"label-sm":["\"Source Sans 3\""],"headline-lg":["\"Source Sans 3\""],"label-lg":["\"Source Sans 3\""]},fontSize:{"body-md":["16px",{lineHeight:"24px",fontWeight:"400"}],"headline-sm":["20px",{lineHeight:"28px",fontWeight:"600"}],"headline-xl-mobile":["26px",{lineHeight:"34px",letterSpacing:"-0.015em",fontWeight:"700"}],"headline-xl":["32px",{lineHeight:"40px",letterSpacing:"-0.02em",fontWeight:"700"}],"body-lg":["18px",{lineHeight:"28px",fontWeight:"400"}],"label-md":["13px",{lineHeight:"18px",letterSpacing:"0.02em",fontWeight:"600"}],"body-sm":["14px",{lineHeight:"20px",fontWeight:"400"}],"label-sm":["11px",{lineHeight:"16px",letterSpacing:"0.04em",fontWeight:"700"}],"headline-lg":["24px",{lineHeight:"32px",letterSpacing:"-0.01em",fontWeight:"600"}],"label-lg":["15px",{lineHeight:"20px",letterSpacing:"0.01em",fontWeight:"600"}]}}}};</script></head><body class="bg-surface text-on-surface font-body-md text-body-md antialiased min-h-screen flex flex-col justify-between"><header class="fixed top-0 left-0 right-0 w-full z-50 bg-surface/90 backdrop-blur-md shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-20 max-w-7xl mx-auto px-margin md:px-margin-tablet lg:px-margin-desktop flex items-center justify-between gap-space-lg"><div class="flex items-center gap-space-lg shrink-0"><div class="flex items-center gap-space-sm"><div class="w-10 h-10 rounded-lg bg-primary flex items-center justify-center text-on-primary shadow-sm"><span class="material-symbols-outlined text-[24px]">kitchen</span></div><div class="flex flex-col"><span class="font-headline-lg text-headline-lg tracking-tight text-primary leading-none">FrigoMalin</span><span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-space-xs mt-0.5"><span class="w-2 h-2 rounded-full bg-secondary inline-block"></span>Données locales</span></div></div></div><nav class="flex items-center gap-space-xs bg-surface-container-low p-space-xs rounded-xl" data-active-classes="bg-primary-container text-on-primary font-bold rounded-lg shadow-sm"><a class="flex items-center gap-space-xs px-space-md py-space-sm rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="mon-stock" href="#"><span>Mon stock</span><span class="px-space-xs py-0.5 rounded-full bg-tertiary-container text-on-tertiary font-label-sm text-label-sm leading-none">3</span></a><a class="flex items-center px-space-md py-space-sm rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="idees-recettes" href="#"><span>Idées recettes</span></a><a aria-current="page" class="flex items-center px-space-md py-space-sm transition-colors bg-primary-container text-on-primary font-bold rounded-lg shadow-sm" data-path="mon-bilan" href="#"><span>Mon bilan</span></a></nav><div class="flex items-center gap-space-md shrink-0"><a class="inline-flex items-center gap-space-xs bg-primary text-on-primary px-space-lg py-space-sm rounded-lg font-label-lg text-label-lg hover:bg-primary-container transition-colors shadow-sm" data-path="ajouter-un-produit" href="#"><span class="material-symbols-outlined text-[18px]">add</span><span>Ajouter un produit</span></a><div class="h-6 w-px bg-outline-variant hidden sm:block"></div><span class="hidden lg:block font-label-md text-label-md text-on-surface-variant whitespace-nowrap">24 mai 2024</span><a class="p-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors flex items-center justify-center" data-path="parametres" href="#" title="Mon compte et paramètres"><span class="material-symbols-outlined text-[22px]">settings</span></a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-20 flex-1 max-w-7xl mx-auto px-margin md:px-margin-tablet lg:px-margin-desktop py-space-xl"><div class="flex flex-col w-full">
+<div class="flex flex-col gap-space-lg mb-space-xl">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md">
+<div class="flex flex-col gap-space-xs">
+<div class="inline-flex items-center gap-space-xs px-space-md py-space-xs rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-md text-label-md w-fit shadow-sm">
+<span class="material-symbols-outlined text-[16px] text-secondary">calendar_month</span>
+<span>Rapport mensuel local • Mai 2024</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-primary tracking-tight mt-space-xs">Mon bilan</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+          Le récapitulatif de vos aliments consommés ou préservés à temps.
+        </p>
+</div>
+<div class="flex items-center gap-space-sm bg-surface-container-low px-space-md py-space-sm rounded-xl text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary text-[20px]" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+<span class="font-label-md text-label-md">Audit souverain 100% vérifié en local</span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-start">
+<section class="lg:col-span-7 flex flex-col gap-space-lg">
+<div class="bg-surface-container-lowest rounded-xl p-space-xl shadow-sm relative overflow-hidden flex flex-col gap-space-lg">
+<div class="absolute -right-12 -top-12 w-48 h-48 rounded-full bg-secondary-fixed/30 pointer-events-none blur-2xl"></div>
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-md relative z-10">
+<div class="flex items-center gap-space-md">
+<div class="w-14 h-14 rounded-xl bg-primary text-on-primary flex items-center justify-center shadow-md">
+<span class="material-symbols-outlined text-[32px]">eco</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider block">Impact réel mesuré</span>
+<div class="flex items-baseline gap-space-xs">
+<span class="font-headline-xl text-headline-xl text-on-surface font-bold">18</span>
+<span class="font-headline-sm text-headline-sm text-primary font-semibold">aliments sauvés</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">ce mois-ci avec succès</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm bg-surface-container-low px-space-md py-space-sm rounded-lg self-start sm:self-auto">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary inline-block animate-pulse"></span>
+<span class="font-label-md text-label-md text-primary font-semibold">Zéro gaspillage évitable</span>
+</div>
+</div>
+<div class="w-full bg-surface-container-low p-space-md rounded-xl flex flex-col gap-space-xs">
+<div class="flex justify-between items-center text-on-surface">
+<span class="font-label-md text-label-md">Objectif mensuel de préservation</span>
+<span class="font-label-md text-label-md text-primary font-bold">18 / 20 prévus</span>
+</div>
+<div class="w-full bg-surface-container-highest h-3 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full transition-all duration-700" style="width: 90%;"></div>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">90% d'efficacité sur l'ensemble du cycle de rotation du stock</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md pt-space-xs">
+<div class="bg-surface-container-low p-space-lg rounded-xl flex flex-col gap-space-sm transition-transform hover:-translate-y-0.5 duration-200">
+<div class="flex items-center justify-between">
+<div class="w-10 h-10 rounded-lg bg-surface-container-lowest text-primary flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[24px]">restaurant</span>
+</div>
+<span class="px-space-sm py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm">
+                78% du total
+              </span>
+</div>
+<div>
+<span class="font-headline-lg text-headline-lg text-on-surface font-bold block">14 produits</span>
+<span class="font-label-lg text-label-lg text-primary block mt-0.5">Consommés à temps</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Repas cuisinés, dégustés et validés avant l'échéance critique.
+            </p>
+</div>
+<div class="bg-surface-container-low p-space-lg rounded-xl flex flex-col gap-space-sm transition-transform hover:-translate-y-0.5 duration-200">
+<div class="flex items-center justify-between">
+<div class="w-10 h-10 rounded-lg bg-surface-container-lowest text-secondary flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[24px]">ac_unit</span>
+</div>
+<span class="px-space-sm py-0.5 rounded-full bg-surface-container-high text-on-surface font-label-sm text-label-sm">
+                22% du total
+              </span>
+</div>
+<div>
+<span class="font-headline-lg text-headline-lg text-on-surface font-bold block">4 produits</span>
+<span class="font-label-lg text-label-lg text-secondary block mt-0.5">Mis au congélateur à temps</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Durée de conservation prolongée activement au grand froid.
+            </p>
+</div>
+</div>
+<div class="bg-surface-container-low p-space-md rounded-xl flex items-center gap-space-md">
+<div class="w-10 h-10 shrink-0 rounded-full bg-surface-container-lowest text-secondary flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[22px]">format_quote</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface italic">
+            « Rythme régulier : chaque geste compte pour prendre soin de ses aliments. »
+          </p>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center gap-space-sm text-primary">
+<span class="material-symbols-outlined text-[22px]">info</span>
+<h2 class="font-headline-sm text-headline-sm tracking-tight text-on-surface">Transparence méthodologique</h2>
+</div>
+<div class="bg-surface-container-low p-space-md rounded-lg flex flex-col gap-space-xs text-on-surface-variant">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Principe de sincérité factuelle</span>
+<p class="font-body-md text-body-md leading-relaxed">
+            Produits déclarés consommés ou congelés avant leur date de péremption. Ce compteur repose exclusivement sur vos déclarations, pas sur une estimation spéculative en euros ou en CO₂.
+          </p>
+</div>
+<div class="flex items-start gap-space-sm text-on-surface-variant bg-surface p-space-md rounded-lg">
+<span class="material-symbols-outlined text-secondary text-[20px] shrink-0 mt-0.5">rule</span>
+<div class="flex flex-col gap-space-xs">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Règle de calcul vérifiable</span>
+<p class="font-body-sm text-body-sm leading-relaxed">
+              Un produit ne compte qu'une seule fois. Une action effectuée après la date limite n'augmente pas ce compteur.
+            </p>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md pt-space-xs">
+<div class="flex items-center gap-space-md p-space-sm rounded-lg bg-surface-container-low">
+<img class="w-14 h-14 rounded-lg object-cover shadow-sm shrink-0" data-alt="Bocal en verre contenant une soupe maison préparée et des herbes aromatiques fraîches dans une cuisine chaleureuse et lumineuse aux tonalités écrues et boisées" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0FuX7dVse2sfO5Y8p-7kvQZa8HU6Y_Kbz3rjBeVUsTbAzvlSvvD3CS0jKTR4Yobuu48KmtYza9aksIa0jtjV0U6wPBMRPuATXymjBKMVnYFvTBa8o_8exOUEJndaU5T6FUi4d6lIiF24A34WCYTEOA9QHLjTKGpA4yI1-mbxMHqzkZOP7nrGPPyEyZ-aHKL1vGEh4X2sOb3XoHnSOiVIeipDZFOhAK_nPl7J2wa5HK5hQn-lrHM6_kQ"/>
+<div class="min-w-0">
+<span class="font-label-md text-label-md text-on-surface truncate block">Soupe potimarron maison</span>
+<span class="font-body-sm text-body-sm text-secondary truncate block">Consommée à J-1</span>
+</div>
+</div>
+<div class="flex items-center gap-space-md p-space-sm rounded-lg bg-surface-container-low">
+<img class="w-14 h-14 rounded-lg object-cover shadow-sm shrink-0" data-alt="Baies rouges et herbes fraîches congelées dans des contenants réutilisables transparents rangés proprement dans un compartiment de congélateur domestique" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPlS8MUVzIsR9XcQRnFz15LYNPnW5yWCJtBIutjxLobsn_ceeAelwo6QWrbOSR9iX3Jx-Hq1QnKNAC2as0pXyuRxsbEh5qLVskIulNIjIuGVnPbTCUf5ZEbKoeKT9GxZfR9zmNiYdN0o0uYcnDYe2Fq6DbsGpHmh0xo8Jhn1O7lbDSBecxUvNyro422M68rP3LJDEFCEUweFI-wpxo4pvMBPjWoFneA2qh9Hqz6a6wnEuXnofL76MIOA"/>
+<div class="min-w-0">
+<span class="font-label-md text-label-md text-on-surface truncate block">Framboises du verger</span>
+<span class="font-body-sm text-body-sm text-secondary truncate block">Congelées le 18 mai</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<aside class="lg:col-span-5 flex flex-col gap-space-lg">
+<div class="bg-surface-container-lowest rounded-xl p-space-xl shadow-sm flex flex-col gap-space-lg relative">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-secondary text-on-secondary flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[22px]">lock</span>
+</div>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Mes données &amp; Confidentialité</h2>
+<span class="font-label-sm text-label-sm text-secondary font-bold">100% Hors-ligne et Souverain</span>
+</div>
+</div>
+</div>
+<div class="relative overflow-hidden rounded-xl h-36 flex items-end p-space-md shadow-inner" data-alt="Une cuisine paisible et authentique avec des étagères ouvertes en bois clair, des pots en céramique blanche et un carnet de recettes ouvert sous une lumière du matin naturelle et douce" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD_2iFWmc3owEIAMfDwUmFpM6Jh9wn6Ag57xrHKc4qTJnr28FC2Secr5NO2DW9lC3gt5dgJ2ayZbvgH0uAMwagT1PA-5UKl31mBUpm4Ir3JXqj5VD0DDLkkjeZXFCC1XF0LTf_nIrB6CatEHQ7jJvlqn1USE2O6Uf-dlEqiaEz9RnrUZMRpueS4GlRk68lVLOcfcIRrsPQ5dxDXpFGsF4ObCdEdCYrvvHfMFjpXRrI9GRuHPtnSakpdrg')">
+<div class="absolute inset-0 bg-primary/80 backdrop-blur-xs"></div>
+<div class="relative z-10 flex items-center gap-space-sm text-on-primary">
+<span class="material-symbols-outlined text-[24px]">database</span>
+<span class="font-label-md text-label-md font-semibold">Base autonome locale : IndexedDB active</span>
+</div>
+</div>
+<div class="flex flex-col gap-space-sm">
+<p class="font-body-md text-body-md text-on-surface leading-relaxed">
+            Vos données sont stockées exclusivement dans ce navigateur (IndexedDB local). Aucun compte, aucun traçage, aucune transmission vers un serveur distant.
+          </p>
+</div>
+<div class="bg-tertiary-fixed/40 p-space-md rounded-xl flex items-start gap-space-md shadow-xs">
+<div class="w-8 h-8 rounded-full bg-tertiary text-on-tertiary shrink-0 flex items-center justify-center mt-0.5">
+<span class="material-symbols-outlined text-[18px]">warning</span>
+</div>
+<div class="flex flex-col gap-space-xs text-on-surface">
+<span class="font-label-md text-label-md text-tertiary font-bold">Recommandation d'usage</span>
+<p class="font-body-sm text-body-sm leading-relaxed text-on-surface-variant">
+<strong class="text-on-surface font-semibold">Attention au nettoyage du navigateur :</strong> vider le cache ou l'historique complet peut effacer votre stock. Pensez à faire une sauvegarde régulière ci-dessous.
+            </p>
+</div>
+</div>
+<div class="flex flex-col gap-space-sm pt-space-xs">
+<button class="w-full h-12 bg-primary text-on-primary rounded-lg font-label-lg text-label-lg font-semibold flex items-center justify-center gap-space-sm hover:bg-primary-container active:scale-[0.99] transition-all shadow-sm" id="export-btn">
+<span class="material-symbols-outlined text-[20px]">download</span>
+<span>Exporter une sauvegarde (fichier JSON)</span>
+</button>
+<button class="w-full h-12 bg-surface-container-low text-primary rounded-lg font-label-lg text-label-lg font-semibold flex items-center justify-center gap-space-sm hover:bg-surface-container-high transition-colors" id="import-btn">
+<span class="material-symbols-outlined text-[20px]">upload_file</span>
+<span>Importer une sauvegarde</span>
+</button>
+</div>
+<div class="bg-surface-container-low p-space-md rounded-xl flex items-start gap-space-sm text-on-surface-variant" id="backup-status">
+<span class="material-symbols-outlined text-secondary text-[20px] shrink-0 mt-0.5" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-primary font-semibold">Exportation réussie</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Dernière sauvegarde exportée le 20 mai 2024 à 18h32</span>
+</div>
+</div>
+<div class="pt-space-xs flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span class="flex items-center gap-space-xs">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+            Format ouvert standard
+          </span>
+<span>Version du schéma : 1.4.0</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center gap-space-sm text-primary">
+<span class="material-symbols-outlined text-[20px]">lightbulb</span>
+<span class="font-label-lg text-label-lg font-semibold">Conseil d'organisation</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          Pour une traçabilité optimale sans stress, effectuez l'inventaire rapide une fois par semaine lors du rangement de vos courses.
+        </p>
+</div>
+</aside>
+</div>
+</div>
+<script>
+  (function() {
+    const exportBtn = document.getElementById('export-btn');
+    const backupStatus = document.getElementById('backup-status');
+
+    if (exportBtn && backupStatus) {
+      exportBtn.addEventListener('click', function() {
+        const originalContent = exportBtn.innerHTML;
+        exportBtn.innerHTML = '<span class="material-symbols-outlined text-[20px] animate-spin">sync</span><span>Génération du fichier JSON...</span>';
+        
+        setTimeout(function() {
+          const now = new Date();
+          const day = String(now.getDate()).padStart(2, '0');
+          const months = ['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre'];
+          const month = months[now.getMonth()];
+          const year = now.getFullYear();
+          const hours = String(now.getHours()).padStart(2, '0');
+          const minutes = String(now.getMinutes()).padStart(2, '0');
+          
+          exportBtn.innerHTML = originalContent;
+          backupStatus.innerHTML = `
+            <span class="material-symbols-outlined text-secondary text-[20px] shrink-0 mt-0.5" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+            <div class="flex flex-col">
+              <span class="font-label-md text-label-md text-primary font-semibold">Exportation réussie</span>
+              <span class="font-body-sm text-body-sm text-on-surface-variant">Dernière sauvegarde exportée le ${day} ${month} ${year} à ${hours}h${minutes}</span>
+            </div>
+          `;
+        }, 600);
+      });
+    }
+
+    const importBtn = document.getElementById('import-btn');
+    if (importBtn) {
+      importBtn.addEventListener('click', function() {
+        const input = document.createElement('input');
+        input.type = 'file';
+        input.accept = '.json';
+        input.click();
+      });
+    }
+  })();
+</script></main><footer class="w-full bg-surface-container-low shadow-[0_1px_8px_rgba(0,0,0,0.04)] mt-space-xl"><div class="max-w-7xl mx-auto px-margin md:px-margin-tablet lg:px-margin-desktop py-space-lg flex flex-col md:flex-row items-center justify-between gap-space-md font-body-sm text-body-sm text-on-surface-variant"><div class="flex items-center gap-space-xs"><span class="font-label-md text-label-md text-primary font-bold">FrigoMalin</span><span>•</span><span>Application locale autonome (IndexedDB)</span><span>•</span><span>Respect strict de la vie privée</span></div><div class="flex items-center gap-space-md text-on-surface-variant"><span class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-[16px] text-secondary">shield</span>Zéro pisteurs</span><span>•</span><span>Alimenté par Open Food Facts</span></div></div></footer></body></html>

@@ -1,0 +1,9 @@
+dist
+coverage
+playwright-report
+test-results
+package-lock.json
+# Documentation rédigée à la main : non reformatée.
+*.md
+.claude
+design

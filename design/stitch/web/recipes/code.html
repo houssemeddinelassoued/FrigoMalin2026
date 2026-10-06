@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+
+<html lang="fr"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,300..900;1,300..900&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"primary-fixed":"#a6f4b5","surface-bright":"#f8f9ff","on-surface-variant":"#404940","on-error-container":"#93000a","on-primary":"#ffffff","on-surface":"#121c2a","primary-container":"#166534","secondary-fixed":"#a6f2d1","inverse-primary":"#8bd79b","tertiary-container":"#92400e","inverse-on-surface":"#eaf1ff","outline-variant":"#bfc9bd","tertiary-fixed":"#ffdbcb","on-tertiary-fixed-variant":"#7a3000","surface-tint":"#1f6c3a","surface-container-lowest":"#ffffff","surface-dim":"#d0dbed","primary":"#004c22","on-primary-fixed-variant":"#005226","on-secondary-fixed":"#002116","surface-container-highest":"#d9e3f6","tertiary":"#712c00","on-tertiary-fixed":"#341000","on-primary-fixed":"#00210b","on-tertiary":"#ffffff","secondary-container":"#a6f2d1","on-background":"#121c2a","error-container":"#ffdad6","surface-container-low":"#eff4ff","primary-fixed-dim":"#8bd79b","inverse-surface":"#27313f","tertiary-fixed-dim":"#ffb693","on-secondary-fixed-variant":"#00513b","background":"#f8f9ff","surface-variant":"#d9e3f6","on-secondary":"#ffffff","surface-container-high":"#dee9fc","on-tertiary-container":"#ffc2a5","secondary":"#1b6b51","on-error":"#ffffff","surface-container":"#e6eeff","on-primary-container":"#93e0a2","on-secondary-container":"#237157","error":"#ba1a1a","secondary-fixed-dim":"#8bd6b6","surface":"#f8f9ff","outline":"#707a6f"},borderRadius:{DEFAULT:"0.25rem",lg:"0.5rem",xl:"0.75rem",full:"9999px"},spacing:{"space-sm":"0.5rem","space-xs":"0.25rem",gutter:"1rem","space-lg":"1.5rem","gutter-desktop":"1.5rem","space-xl":"2rem",margin:"1rem","margin-desktop":"3rem","margin-tablet":"2rem","space-md":"1rem"},fontFamily:{"body-md":["\"Source Sans 3\""],"headline-sm":["\"Source Sans 3\""],"headline-xl-mobile":["\"Source Sans 3\""],"headline-xl":["\"Source Sans 3\""],"body-lg":["\"Source Sans 3\""],"label-md":["\"Source Sans 3\""],"body-sm":["\"Source Sans 3\""],"label-sm":["\"Source Sans 3\""],"headline-lg":["\"Source Sans 3\""],"label-lg":["\"Source Sans 3\""]},fontSize:{"body-md":["16px",{lineHeight:"24px",fontWeight:"400"}],"headline-sm":["20px",{lineHeight:"28px",fontWeight:"600"}],"headline-xl-mobile":["26px",{lineHeight:"34px",letterSpacing:"-0.015em",fontWeight:"700"}],"headline-xl":["32px",{lineHeight:"40px",letterSpacing:"-0.02em",fontWeight:"700"}],"body-lg":["18px",{lineHeight:"28px",fontWeight:"400"}],"label-md":["13px",{lineHeight:"18px",letterSpacing:"0.02em",fontWeight:"600"}],"body-sm":["14px",{lineHeight:"20px",fontWeight:"400"}],"label-sm":["11px",{lineHeight:"16px",letterSpacing:"0.04em",fontWeight:"700"}],"headline-lg":["24px",{lineHeight:"32px",letterSpacing:"-0.01em",fontWeight:"600"}],"label-lg":["15px",{lineHeight:"20px",letterSpacing:"0.01em",fontWeight:"600"}]}}}};</script></head><body class="bg-surface text-on-surface font-body-md text-body-md antialiased min-h-screen flex flex-col justify-between"><header class="fixed top-0 left-0 right-0 w-full z-50 bg-surface/90 backdrop-blur-md shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-20 max-w-7xl mx-auto px-margin md:px-margin-tablet lg:px-margin-desktop flex items-center justify-between gap-space-lg"><div class="flex items-center gap-space-lg shrink-0"><div class="flex items-center gap-space-sm"><div class="w-10 h-10 rounded-lg bg-primary flex items-center justify-center text-on-primary shadow-sm"><span class="material-symbols-outlined text-[24px]">kitchen</span></div><div class="flex flex-col"><span class="font-headline-lg text-headline-lg tracking-tight text-primary leading-none">FrigoMalin</span><span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-space-xs mt-0.5"><span class="w-2 h-2 rounded-full bg-secondary inline-block"></span>Données locales</span></div></div></div><nav class="flex items-center gap-space-xs bg-surface-container-low p-space-xs rounded-xl" data-active-classes="bg-primary-container text-on-primary font-bold rounded-lg shadow-sm"><a class="flex items-center gap-space-xs px-space-md py-space-sm rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="mon-stock" href="#"><span>Mon stock</span><span class="px-space-xs py-0.5 rounded-full bg-tertiary-container text-on-tertiary font-label-sm text-label-sm leading-none">3</span></a><a aria-current="page" class="flex items-center px-space-md py-space-sm transition-colors bg-primary-container text-on-primary font-bold rounded-lg shadow-sm" data-path="idees-recettes" href="#"><span>Idées recettes</span></a><a class="flex items-center px-space-md py-space-sm rounded-lg font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="mon-bilan" href="#"><span>Mon bilan</span></a></nav><div class="flex items-center gap-space-md shrink-0"><a class="inline-flex items-center gap-space-xs bg-primary text-on-primary px-space-lg py-space-sm rounded-lg font-label-lg text-label-lg hover:bg-primary-container transition-colors shadow-sm" data-path="ajouter-un-produit" href="#"><span class="material-symbols-outlined text-[18px]">add</span><span>Ajouter un produit</span></a><div class="h-6 w-px bg-outline-variant hidden sm:block"></div><span class="hidden lg:block font-label-md text-label-md text-on-surface-variant whitespace-nowrap">24 mai 2024</span><a class="p-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors flex items-center justify-center" data-path="parametres" href="#" title="Mon compte et paramètres"><span class="material-symbols-outlined text-[22px]">settings</span></a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-20 flex-1 max-w-7xl mx-auto px-margin md:px-margin-tablet lg:px-margin-desktop py-space-xl"><div class="flex flex-col w-full">
+<!-- Subtle decorative ambient circles contained within parent -->
+<div class="relative w-full overflow-hidden pb-space-xl">
+<div class="absolute -top-24 -left-20 w-96 h-96 rounded-full bg-secondary-fixed/30 blur-3xl pointer-events-none"></div>
+<div class="absolute top-48 right-0 w-80 h-80 rounded-full bg-primary-fixed/20 blur-3xl pointer-events-none"></div>
+<!-- Header Section -->
+<div class="relative flex flex-col gap-space-md mb-space-xl">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-lg">
+<div class="max-w-2xl">
+<div class="inline-flex items-center gap-space-xs px-space-sm py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm uppercase tracking-wider mb-space-xs">
+<span class="material-symbols-outlined text-[15px]" style="font-variation-settings: 'FILL' 1;">eco</span>
+            Cuisine Raisonnée &amp; Anti-Gaspillage
+          </div>
+<h1 class="font-headline-xl text-headline-xl text-primary tracking-tight">Idées recettes</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-1">
+            Des idées simples avec ce que vous avez déjà dans vos placards et votre réfrigérateur.
+          </p>
+</div>
+<!-- Metric pill summary -->
+<div class="flex items-center gap-space-md bg-surface-container-low p-space-sm rounded-xl shadow-sm self-start md:self-auto">
+<div class="flex items-center gap-space-xs px-space-sm py-1 rounded-lg bg-surface-container-lowest">
+<span class="material-symbols-outlined text-primary text-[20px]">inventory_2</span>
+<span class="font-label-md text-label-md text-on-surface">14 ingrédients en stock</span>
+</div>
+<div class="flex items-center gap-space-xs px-space-sm py-1 rounded-lg bg-surface-container-lowest">
+<span class="material-symbols-outlined text-tertiary text-[20px]">priority_high</span>
+<span class="font-label-md text-label-md text-tertiary">2 urgents à cuisiner</span>
+</div>
+</div>
+</div>
+<!-- Ethical Transparency Banner (Warm Functionalist Callout) -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col md:flex-row items-start md:items-center justify-between gap-space-md">
+<div class="flex items-start md:items-center gap-space-md">
+<div class="w-10 h-10 rounded-lg bg-secondary-fixed/50 text-secondary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[24px]">verified_user</span>
+</div>
+<div>
+<div class="flex items-center gap-space-xs">
+<span class="font-label-lg text-label-lg text-on-surface">Catalogue local hors-ligne</span>
+<span class="px-1.5 py-0.5 rounded bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm">Sécurisé</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+              Sans IA générative, sans profilage ni calcul calorique. Sécurité alimentaire stricte : <strong class="font-semibold text-on-surface">0 ingrédient à DLC dépassée proposé</strong>.
+            </p>
+</div>
+</div>
+<div class="flex items-center gap-space-xs text-on-surface-variant font-label-sm text-label-sm shrink-0 bg-surface-container-low px-space-sm py-1.5 rounded-lg">
+<span class="material-symbols-outlined text-[16px] text-primary">cloud_off</span>
+<span>Fonctionne 100% sans connexion</span>
+</div>
+</div>
+<!-- Quick Interactive Filter Tabs -->
+<div class="flex flex-wrap items-center gap-space-xs pt-space-xs" id="recipe-filter-group">
+<button class="filter-tab active-tab px-space-md py-space-sm rounded-lg font-label-lg text-label-lg bg-primary text-on-primary shadow-sm flex items-center gap-space-xs transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">apps</span>
+<span>Tout afficher</span>
+<span class="ml-1 px-1.5 py-0.2 rounded-full bg-primary-container text-on-primary font-label-sm text-label-sm">7</span>
+</button>
+<button class="filter-tab px-space-md py-space-sm rounded-lg font-label-lg text-label-lg bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high transition-colors flex items-center gap-space-xs" type="button">
+<span class="material-symbols-outlined text-[18px] text-tertiary">notification_important</span>
+<span>Anti-gaspi prioritaire</span>
+<span class="px-1.5 py-0.2 rounded-full bg-tertiary-container text-on-tertiary font-label-sm text-label-sm">2</span>
+</button>
+<button class="filter-tab px-space-md py-space-sm rounded-lg font-label-lg text-label-lg bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high transition-colors flex items-center gap-space-xs" type="button">
+<span class="material-symbols-outlined text-[18px] text-secondary">check_circle</span>
+<span>100% complet</span>
+<span class="px-1.5 py-0.2 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm">1</span>
+</button>
+<button class="filter-tab px-space-md py-space-sm rounded-lg font-label-lg text-label-lg bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high transition-colors flex items-center gap-space-xs" type="button">
+<span class="material-symbols-outlined text-[18px]">timer</span>
+<span>Rapide (&lt; 20 min)</span>
+<span class="px-1.5 py-0.2 rounded-full bg-surface-container text-on-surface font-label-sm text-label-sm">4</span>
+</button>
+</div>
+</div>
+<!-- Main Asymmetric Workspace Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- LEFT REGION: Recipe Cards Catalogue (7 Cols) -->
+<div class="lg:col-span-7 flex flex-col gap-space-lg">
+<!-- Card 1: Prioritaire & Complète (Omelette) -->
+<div class="relative bg-surface-container-lowest rounded-xl shadow-md p-space-lg flex flex-col gap-space-md transition-shadow hover:shadow-lg ring-2 ring-primary">
+<!-- Card Header & Badge Strip -->
+<div class="flex items-start justify-between gap-space-md">
+<div class="flex flex-col gap-space-xs">
+<div class="flex flex-wrap items-center gap-space-xs">
+<span class="inline-flex items-center gap-1 px-space-sm py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">hourglass_top</span>
+                  Anti-gaspi prioritaire
+                </span>
+<span class="inline-flex items-center gap-1 px-space-sm py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">task_alt</span>
+                  100% En stock
+                </span>
+<span class="inline-flex items-center px-space-sm py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">
+                  Zéro déchet
+                </span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mt-1">Omelette paysanne au poulet et herbes</h2>
+<div class="flex items-center gap-space-md font-body-sm text-body-sm text-on-surface-variant">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[18px]">timer</span> 15 min</span>
+<span>•</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[18px]">chef_hat</span> Facile</span>
+<span>•</span>
+<span class="flex items-center gap-1 text-primary font-semibold"><span class="material-symbols-outlined text-[18px]">savings</span> +1.8 kg CO₂ évités</span>
+</div>
+</div>
+<!-- Recipe Visual Thumbnail -->
+<div class="w-24 h-24 md:w-28 md:h-28 rounded-xl overflow-hidden shadow-sm shrink-0 bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="A warm, golden country-style skillet omelette garnished with fresh herbs and tender chicken breast cubes, rustic domestic stoneware setting with natural morning kitchen lighting, soft natural tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXM7OugEsOKrUB-YYNBW07dKv6J7yaoM2bgeXkgQrPfF1rSt67MTAc1d-DEJvUS_9VhyBoXVjzh-p7_R8sgS150mKubq0fCNaiMGIJ3dTHV1anWBaiP5Z749-u88uK9aeJw05ch3f_1_9gkpIhRZwy7NiP0wIGgQU6nOe144jgQjaSfYKX2k5V8TIC1weqAqwjUxSBLUIyScC9_xM4qoyUg8wsCidKn0Z1yHbrdQfGRTMe3nMMvQUCEQ"/>
+</div>
+</div>
+<!-- Stock Items Breakdown -->
+<div class="bg-surface-container-low p-space-md rounded-xl flex flex-col gap-space-sm">
+<div class="flex items-center justify-between font-label-md text-label-md text-on-surface">
+<span class="flex items-center gap-space-xs font-semibold text-primary">
+<span class="material-symbols-outlined text-[18px]">check_circle</span>
+                Ingrédients du stock disponibles (3/3)
+              </span>
+<span class="text-secondary font-label-sm text-label-sm bg-surface-container-lowest px-space-sm py-0.5 rounded-full">
+                Prête immédiatement
+              </span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-space-xs pt-1">
+<!-- Item 1: Urgent -->
+<div class="bg-surface-container-lowest p-space-sm rounded-lg shadow-sm flex flex-col justify-between">
+<div>
+<span class="font-label-lg text-label-lg text-on-surface block truncate">Filet de poulet</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">1 pièce (~180g)</span>
+</div>
+<div class="mt-2 inline-flex items-center gap-1 px-1.5 py-0.5 rounded bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm self-start">
+<span class="material-symbols-outlined text-[13px]">alarm</span>
+                  À cuisiner aujourd'hui
+                </div>
+</div>
+<!-- Item 2: Approaching -->
+<div class="bg-surface-container-lowest p-space-sm rounded-lg shadow-sm flex flex-col justify-between">
+<div>
+<span class="font-label-lg text-label-lg text-on-surface block truncate">Crème fraîche</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">2 c. à soupe (Frigo)</span>
+</div>
+<div class="mt-2 inline-flex items-center gap-1 px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface font-label-sm text-label-sm self-start">
+<span class="material-symbols-outlined text-[13px]">calendar_today</span>
+                  Sous 2 jours
+                </div>
+</div>
+<!-- Item 3: Staples -->
+<div class="bg-surface-container-lowest p-space-sm rounded-lg shadow-sm flex flex-col justify-between">
+<div>
+<span class="font-label-lg text-label-lg text-on-surface block truncate">3 Œufs bio</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Plein air (En réserve)</span>
+</div>
+<div class="mt-2 inline-flex items-center gap-1 px-1.5 py-0.5 rounded bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm self-start">
+<span class="material-symbols-outlined text-[13px]">verified</span>
+                  Optimal
+                </div>
+</div>
+</div>
+<!-- Zero missing alert -->
+<div class="flex items-center gap-space-xs text-secondary font-label-md text-label-md pt-1">
+<span class="material-symbols-outlined text-[18px]">done_all</span>
+<span>Ingrédients manquants : <strong>Aucun</strong> (Tous les assaisonnements sel/poivre/huile sont disponibles).</span>
+</div>
+</div>
+<!-- Bottom Action strip -->
+<div class="flex flex-col sm:flex-row items-center justify-between gap-space-md pt-space-xs">
+<div class="flex items-center gap-space-xs text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[18px] text-primary">menu_book</span>
+<span>3 étapes détaillées affichées dans l'atelier</span>
+</div>
+<button class="w-full sm:w-auto px-space-lg py-space-sm bg-primary text-on-primary rounded-lg font-label-lg text-label-lg shadow-sm hover:bg-primary-container transition-all flex items-center justify-center gap-space-xs" type="button">
+<span class="material-symbols-outlined text-[20px]">soup_kitchen</span>
+<span>Cuisiner cette recette</span>
+</button>
+</div>
+</div>
+<!-- Card 2: Avec ingrédient manquant (Poêlée de légumes) -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-lg flex flex-col gap-space-md transition-shadow hover:shadow-md">
+<div class="flex items-start justify-between gap-space-md">
+<div class="flex flex-col gap-space-xs">
+<div class="flex flex-wrap items-center gap-space-xs">
+<span class="inline-flex items-center gap-1 px-space-sm py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">kitchen</span>
+                  Garde-manger &amp; Congélateur
+                </span>
+<span class="inline-flex items-center gap-1 px-space-sm py-0.5 rounded-full bg-surface-container text-on-surface font-label-sm text-label-sm">
+                  1 manquant
+                </span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mt-1">Poêlée de légumes d'antan et petits pois</h2>
+<div class="flex items-center gap-space-md font-body-sm text-body-sm text-on-surface-variant">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[18px]">timer</span> 20 min</span>
+<span>•</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[18px]">chef_hat</span> Facile</span>
+<span>•</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[18px]">nutrition</span> Végétarien</span>
+</div>
+</div>
+<!-- Thumbnail -->
+<div class="w-24 h-24 md:w-28 md:h-28 rounded-xl overflow-hidden shadow-sm shrink-0 bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="A rustic pan cooked with vibrant tender garden peas, sliced shallots and yellow onions on an unbleached stoneware table, natural domestic light, cozy kitchen ambiance." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAa0FAR6arltNFlJ3su9u8PfYovk2CL3LU-rMhyHHylksLtWUyUPQD77vDZI3SDtsUJiAXpy7FWfXfJIJhkNoPgVuHxSUfe6yprlKOq6HVIHCuCv1Gie2avUrtDwlHqZcYNS5XAIgHVruszs8InnWcFvCXuNKJVwUF2l7RoP8UxcfWmh9XxP3m_TB6UCi20rBbhz_VnrnjpKyjtyqcPcyKqT03oq7cBuHGwvWaBL95KlLzemJ_0lebLYw"/>
+</div>
+</div>
+<!-- Stock vs Missing Matrix -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-sm">
+<!-- Available -->
+<div class="bg-surface-container-low p-space-sm rounded-lg flex flex-col gap-space-xs">
+<span class="font-label-md text-label-md text-primary font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">check</span> En stock (2)
+              </span>
+<ul class="flex flex-col gap-1 text-on-surface font-body-sm text-body-sm">
+<li class="flex items-center justify-between bg-surface-container-lowest px-2 py-1 rounded">
+<span>Petits pois tendres</span>
+<span class="text-on-surface-variant font-label-sm text-label-sm">Congélateur (300g)</span>
+</li>
+<li class="flex items-center justify-between bg-surface-container-lowest px-2 py-1 rounded">
+<span>2 Oignons jaunes</span>
+<span class="text-on-surface-variant font-label-sm text-label-sm">Placard / Frais</span>
+</li>
+</ul>
+</div>
+<!-- Missing ingredient -->
+<div class="bg-surface-container-low p-space-sm rounded-lg flex flex-col gap-space-xs">
+<span class="font-label-md text-label-md text-on-surface-variant font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-tertiary">shopping_basket</span> À prévoir
+              </span>
+<div class="bg-surface-container-lowest px-2 py-1.5 rounded flex items-center justify-between">
+<div>
+<span class="font-body-sm text-body-sm text-on-surface block">2 Carottes fraîches</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Manquant (Facultatif ou substituable par panais)</span>
+</div>
+<button class="p-1 rounded hover:bg-surface-container text-primary" title="Ajouter à la liste" type="button">
+<span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 2 Action Buttons -->
+<div class="flex flex-col sm:flex-row items-center justify-between gap-space-sm pt-space-xs">
+<button class="w-full sm:w-auto px-space-md py-space-sm rounded-lg font-label-lg text-label-lg bg-surface-container-low text-primary hover:bg-surface-container transition-colors flex items-center justify-center gap-space-xs" type="button">
+<span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+<span>Ajouter les carottes aux courses</span>
+</button>
+<button class="w-full sm:w-auto px-space-md py-space-sm rounded-lg font-label-lg text-label-lg bg-surface-container-high text-on-surface hover:bg-surface-container-highest transition-colors flex items-center justify-center gap-space-xs" type="button">
+<span>Voir les détails</span>
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- RIGHT REGION: Interactive Preparation Panel (5 Cols) -->
+<div class="lg:col-span-5 flex flex-col gap-space-md">
+<!-- Interactive Step Panel for currently selected recipe -->
+<div class="bg-surface-container-lowest rounded-xl shadow-md p-space-lg flex flex-col gap-space-md relative overflow-hidden">
+<!-- Panel Header -->
+<div class="flex items-center justify-between pb-space-sm">
+<div class="flex items-center gap-space-xs">
+<div class="w-8 h-8 rounded-lg bg-primary-fixed text-on-primary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">flatware</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider block">Atelier cuisine en cours</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Omelette paysanne au poulet</h3>
+</div>
+</div>
+<span class="px-space-sm py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm">
+              3 étapes simples
+            </span>
+</div>
+<!-- Step 1 -->
+<div class="step-card bg-surface-container-low rounded-xl p-space-md flex flex-col gap-space-xs transition-all">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="w-6 h-6 rounded-full bg-primary text-on-primary font-label-sm text-label-sm flex items-center justify-center font-bold">1</span>
+<span class="font-label-lg text-label-lg text-on-surface">Émincer le poulet</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px]">timer</span> 4 min
+              </span>
+</div>
+<p class="font-body-md text-body-md text-on-surface pl-8">
+              Coupez le filet de poulet en petits dés réguliers. Faites chauffer une noisette de beurre ou un filet d'huile dans la poêle et laissez dorer 4 minutes en remuant régulièrement.
+            </p>
+<div class="pl-8 pt-1 flex items-center gap-space-xs text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px] text-tertiary">tips_and_updates</span>
+<span>Astuce anti-gaspi : Récupérez les sucs au fond de la poêle avec une cuillère d'eau.</span>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="step-card bg-surface-container-low rounded-xl p-space-md flex flex-col gap-space-xs transition-all">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="w-6 h-6 rounded-full bg-primary text-on-primary font-label-sm text-label-sm flex items-center justify-center font-bold">2</span>
+<span class="font-label-lg text-label-lg text-on-surface">Battre les œufs</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px]">timer</span> 2 min
+              </span>
+</div>
+<p class="font-body-md text-body-md text-on-surface pl-8">
+              Dans un bol en grès, fouettez vigoureusement les 3 œufs avec la crème fraîche. Incorporez une pincée de sel, un tour de moulin à poivre et la ciboulette ciselée.
+            </p>
+</div>
+<!-- Step 3 -->
+<div class="step-card bg-surface-container-low rounded-xl p-space-md flex flex-col gap-space-xs transition-all">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="w-6 h-6 rounded-full bg-primary text-on-primary font-label-sm text-label-sm flex items-center justify-center font-bold">3</span>
+<span class="font-label-lg text-label-lg text-on-surface">Cuire à feu doux</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px]">timer</span> 6 min
+              </span>
+</div>
+<p class="font-body-md text-body-md text-on-surface pl-8">
+              Baissez le feu, versez délicatement le mélange sur le poulet chaud. Ramenez les bords vers le centre avec une spatule et laissez prendre 5 à 6 minutes selon votre goût (baveuse ou bien prise).
+            </p>
+</div>
+<!-- Impact & Stock Deduction Call-to-action (Forest Green) -->
+<div class="mt-space-xs p-space-md rounded-xl bg-surface-container flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs font-label-md text-label-md text-on-surface">
+<span class="material-symbols-outlined text-primary text-[20px]">sync_saved_locally</span>
+<span>Mise à jour automatique du stock</span>
+</div>
+<span class="font-label-sm text-label-sm text-primary font-semibold">-3 articles</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              En confirmant la préparation, le poulet fermier, les 3 œufs et la crème seront retirés de votre inventaire, et votre score de gaspillage évité augmentera.
+            </p>
+<button class="w-full h-12 bg-primary hover:bg-primary-container text-on-primary rounded-lg font-label-lg text-label-lg shadow-sm flex items-center justify-center gap-space-xs transition-colors" id="cook-confirm-btn" type="button">
+<span class="material-symbols-outlined text-[20px]">check_circle</span>
+<span>Cuisiné ! Déclarer les ingrédients consommés</span>
+</button>
+</div>
+<!-- Toast Notification (Hidden by default, shown by JS) -->
+<div class="hidden absolute inset-x-4 bottom-4 bg-primary text-on-primary p-space-md rounded-xl shadow-xl flex items-center justify-between transition-all" id="stock-deducted-toast">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[22px]">celebration</span>
+<span class="font-label-lg text-label-lg">Bravo ! Ingrédients déduits et bilan crédité.</span>
+</div>
+<button class="text-on-primary hover:opacity-80" id="close-toast" type="button">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+</div>
+<!-- Mini Anti-waste Impact Widget -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-md flex items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md">
+<!-- Inline SVG Circular Progress (Food Saved Indicator) -->
+<div class="relative w-14 h-14 shrink-0 flex items-center justify-center">
+<svg class="w-full h-full -rotate-90" viewbox="0 0 36 36">
+<path class="text-surface-container-high" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="3.5"></path>
+<path class="text-primary" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="82, 100" stroke-linecap="round" stroke-width="3.5"></path>
+</svg>
+<span class="absolute font-label-md text-label-md text-primary font-bold">82%</span>
+</div>
+<div>
+<span class="font-label-lg text-label-lg text-on-surface block">Indice de valorisation FrigoMalin</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">82% de vos produits à date proche sont cuisinés à temps ce mois-ci.</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Educational Footer / Browse Complete 48 Offline Recipes Banner -->
+<div class="mt-space-xl bg-surface-container-low rounded-xl p-space-lg flex flex-col md:flex-row items-center justify-between gap-space-lg shadow-sm">
+<div class="flex items-start md:items-center gap-space-md">
+<div class="w-12 h-12 rounded-xl bg-surface-container-lowest text-primary flex items-center justify-center shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[28px]">auto_stories</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface">Vous avez d'autres envies culinaires ?</h4>
+<p class="font-body-md text-body-md text-on-surface-variant mt-0.5">
+            Parcourir le catalogue complet des <strong class="text-on-surface">48 recettes locales hors-ligne</strong> ou chercher par technique de cuisson.
+          </p>
+</div>
+</div>
+<div class="flex items-center gap-space-sm shrink-0 w-full md:w-auto">
+<button class="w-full md:w-auto px-space-lg py-space-sm rounded-lg font-label-lg text-label-lg bg-surface-container-lowest text-primary hover:bg-surface-container-high transition-colors shadow-sm flex items-center justify-center gap-space-xs" type="button">
+<span class="material-symbols-outlined text-[18px]">search</span>
+<span>Explorer les 48 recettes</span>
+</button>
+</div>
+</div>
+<!-- Pedagogical Empty State Helper (Hidden placeholder to demonstrate offline no-match UX) -->
+<div class="mt-space-lg p-space-md rounded-xl bg-surface-container-lowest text-on-surface-variant font-body-sm text-body-sm flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-[20px]">lightbulb</span>
+<span><strong>Conseil FrigoMalin :</strong> Si aucune recette ne correspond à votre bac à légumes, essayez l'association universelle « bouillon de restes &amp; gratins libres ».</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Zéro déchet garanti</span>
+</div>
+</div>
+</div>
+<script>
+  // Filter tabs visual toggle
+  const tabs = document.querySelectorAll('#recipe-filter-group .filter-tab');
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => {
+        t.classList.remove('bg-primary', 'text-on-primary', 'shadow-sm');
+        t.classList.add('bg-surface-container-low', 'text-on-surface-variant');
+      });
+      tab.classList.remove('bg-surface-container-low', 'text-on-surface-variant');
+      tab.classList.add('bg-primary', 'text-on-primary', 'shadow-sm');
+    });
+  });
+
+  // Action declaration: deduct consumed ingredients
+  const confirmBtn = document.getElementById('cook-confirm-btn');
+  const toast = document.getElementById('stock-deducted-toast');
+  const closeToast = document.getElementById('close-toast');
+
+  if (confirmBtn && toast) {
+    confirmBtn.addEventListener('click', () => {
+      toast.classList.remove('hidden');
+      confirmBtn.setAttribute('disabled', 'true');
+      confirmBtn.classList.add('opacity-70', 'cursor-not-allowed');
+      confirmBtn.innerHTML = '<span class="material-symbols-outlined text-[20px]">done</span> Ingrédients déjà déduits du stock';
+      
+      setTimeout(() => {
+        toast.classList.add('hidden');
+      }, 5000);
+    });
+  }
+
+  if (closeToast && toast) {
+    closeToast.addEventListener('click', () => {
+      toast.classList.add('hidden');
+    });
+  }
+</script></main><footer class="w-full bg-surface-container-low shadow-[0_1px_8px_rgba(0,0,0,0.04)] mt-space-xl"><div class="max-w-7xl mx-auto px-margin md:px-margin-tablet lg:px-margin-desktop py-space-lg flex flex-col md:flex-row items-center justify-between gap-space-md font-body-sm text-body-sm text-on-surface-variant"><div class="flex items-center gap-space-xs"><span class="font-label-md text-label-md text-primary font-bold">FrigoMalin</span><span>•</span><span>Application locale autonome (IndexedDB)</span><span>•</span><span>Respect strict de la vie privée</span></div><div class="flex items-center gap-space-md text-on-surface-variant"><span class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-[16px] text-secondary">shield</span>Zéro pisteurs</span><span>•</span><span>Alimenté par Open Food Facts</span></div></div></footer></body></html>
