@@ -55,6 +55,14 @@ export function freshnessLabel(item: DatedItem, today: ISODate): string {
   }
 }
 
+/** Aliment encore en stock dont la DLC est strictement antérieure à 	oday : il est à jeter. */
+export function isExpiredDlcInStock(
+  item: Pick<StockItem, "status" | "expiresOn" | "dateKind">,
+  today: ISODate,
+): boolean {
+  return item.status === "en-stock" && freshness(item, today).level === "dlc-depassee";
+}
+
 export function byExpiry(a: DatedItem, b: DatedItem): number {
   return a.expiresOn.localeCompare(b.expiresOn);
 }

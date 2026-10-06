@@ -158,7 +158,12 @@ test("jette en une opération uniquement les DLC dépassées encore en stock", a
       .map((item) => item.id)
       .sort(),
   ).toEqual(["ddm-depassee", "dlc-aujourdhui", "dlc-future"]);
+  for (const unchanged of items.slice(2)) {
+    expect(stored.find((item) => item.id === unchanged.id)).toEqual(unchanged);
+  }
   expect(monthlyImpact(stored, today).total).toBe(savedBefore);
+  expect(await discardExpiredItems(today)).toBe(0);
+  expect(await db.stockItems.toArray()).toEqual(stored);
 });
 
 test("annule toutes les écritures si une mise à jour du lot échoue", async () => {
@@ -186,6 +191,7 @@ test("annule toutes les écritures si une mise à jour du lot échoue", async ()
       status: "en-stock",
     },
   ]);
+  const before = await db.stockItems.toArray();
   const failOnSecond = (_changes: unknown, primaryKey: unknown) => {
     if (primaryKey === "second") throw new Error("Échec de stockage simulé.");
   };
@@ -195,7 +201,7 @@ test("annule toutes les écritures si une mise à jour du lot échoue", async ()
   } finally {
     db.stockItems.hook("updating").unsubscribe(failOnSecond);
   }
-  expect((await db.stockItems.toArray()).every((item) => item.status === "en-stock")).toBe(true);
+  expect(await db.stockItems.toArray()).toEqual(before);
 });
 
 test("round-trips a backup and rejects invalid files with a clear message", async () => {

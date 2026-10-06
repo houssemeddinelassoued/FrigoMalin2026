@@ -162,3 +162,45 @@ test("confirme et persiste le vidage des DLC dépassées sans compter de produit
   expect(monthlyImpact(stored, "2026-10-05").total).toBe(savedBefore);
   expect(await screen.findByText("2 produits marqués comme jetés.")).toBeInTheDocument();
 });
+
+test("affiche l'échec réel du stockage et conserve le stock après rollback du lot", async () => {
+  const items: StockItem[] = ["premier", "second"].map((id) => ({
+    id,
+    name: `Produit ${id}`,
+    quantity: 1,
+    unit: "pièce",
+    expiresOn: "2026-10-04",
+    dateKind: "DLC",
+    location: "réfrigérateur",
+    addedOn: "2026-09-28",
+    status: "en-stock",
+  }));
+  await db.stockItems.bulkAdd(items);
+  const before = await db.stockItems.toArray();
+  const failOnSecond = (_changes: unknown, primaryKey: unknown) => {
+    if (primaryKey === "second") throw new Error("Échec de stockage simulé.");
+  };
+  db.stockItems.hook("updating").subscribe(failOnSecond);
+  try {
+    const user = userEvent.setup();
+    render(<App />);
+    const trigger = await screen.findByRole("button", { name: "Vider les produits périmés" });
+    await waitFor(() => expect(trigger).toBeEnabled());
+    await user.click(trigger);
+    await user.click(
+      within(screen.getByRole("dialog")).getByRole("button", { name: "Marquer comme jetés" }),
+    );
+
+    expect(await screen.findByRole("alert")).toHaveTextContent(
+      "Impossible de vider les produits périmés : le stockage local a refusé la modification. Aucun produit n'a été modifié.",
+    );
+    expect(await db.stockItems.toArray()).toEqual(before);
+    expect(screen.queryByText(/produits? marqués? comme jetés?/i)).not.toBeInTheDocument();
+    expect(trigger).toBeEnabled();
+    for (const item of items) {
+      expect(screen.getByRole("article", { name: item.name })).toBeInTheDocument();
+    }
+  } finally {
+    db.stockItems.hook("updating").unsubscribe(failOnSecond);
+  }
+});

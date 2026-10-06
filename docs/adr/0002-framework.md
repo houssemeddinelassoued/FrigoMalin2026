@@ -5,12 +5,12 @@
 
 ## Contexte et problème
 
-Le POC est une application statique publiée sur GitHub Pages sous `/FrigoMalin/`. Elle doit rester utilisable hors ligne après son premier chargement. La recherche Open Food Facts nécessite une connexion, mais ne doit pas être indispensable à la consultation ou à la gestion du stock. Le cadrage ne prescrit pas de framework (`PRODUCT.md`, `docs/mvp.md`).
+Le POC est une application statique publiée sur GitHub Pages sous `/FrigoMalin2026/`. Elle doit rester utilisable hors ligne après son premier chargement. La recherche Open Food Facts nécessite une connexion, mais ne doit pas être indispensable à la consultation ou à la gestion du stock. Le cadrage ne prescrit pas de framework (`PRODUCT.md`, `docs/mvp.md`).
 
 ## Facteurs de décision
 
 - Développer les écrans et formulaires du POC sans multiplier les dépendances.
-- Générer des ressources statiques pour GitHub Pages, en tenant compte du préfixe `/FrigoMalin/`.
+- Générer des ressources statiques pour GitHub Pages, en tenant compte du préfixe `/FrigoMalin2026/`.
 - Maintenir la compatibilité avec IndexedDB et le fonctionnement hors ligne.
 - Bénéficier de vérifications TypeScript sans complexifier inutilement le POC.
 
@@ -28,7 +28,7 @@ Les tailles de bundle ne sont pas mesurées dans ce dépôt. Le service worker e
 
 Utiliser **Preact 11 + Vite + TypeScript**. Garder l’architecture et les dépendances aussi simples que possible ; n’ajouter `preact/compat` ou une bibliothèque complémentaire que si un besoin concret du POC le justifie.
 
-Configurer Vite pour servir les ressources sous `/FrigoMalin/`. Le choix du routage et sa gestion de ce préfixe seront précisés dans l’ADR 0003. Le hors-ligne devra être validé sur les fichiers statiques générés ; Open Food Facts restera une dépendance en ligne facultative pour l’ajout manuel.
+Configurer Vite pour servir les ressources sous `/FrigoMalin2026/`. Le choix du routage et sa gestion de ce préfixe seront précisés dans l’ADR 0003. Le hors-ligne devra être validé sur les fichiers statiques générés ; Open Food Facts restera une dépendance en ligne facultative pour l’ajout manuel.
 
 ## Conséquences
 

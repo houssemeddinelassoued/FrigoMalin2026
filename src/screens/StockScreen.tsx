@@ -1,11 +1,12 @@
-import { useState } from "preact/hooks";
+import { useRef, useState } from "preact/hooks";
+import { ConfirmDialog } from "../components/ConfirmDialog.tsx";
 import { Icon } from "../components/Icon.tsx";
 import { ItemCard, type ItemAction } from "../components/ItemCard.tsx";
 import { AppHeader, Notice } from "../components/Layout.tsx";
 import type { StockState } from "../data/hooks.ts";
 import { loadDemoData } from "../data/stock.ts";
 import { formatLongDate } from "../domain/dates.ts";
-import { isPriority } from "../domain/expiry.ts";
+import { isExpiredDlcInStock, isPriority } from "../domain/expiry.ts";
 import type { ISODate, StockItem } from "../domain/types.ts";
 import { href } from "../router.ts";
 
@@ -13,10 +14,12 @@ export function StockScreen({
   stock,
   today,
   onAction,
+  onDiscardExpired,
 }: {
   stock: StockState;
   today: ISODate;
   onAction: (item: StockItem, action: ItemAction) => void;
+  onDiscardExpired: () => Promise<number>;
 }) {
   return (
     <>
@@ -27,9 +30,125 @@ export function StockScreen({
           <Icon name="calendar" size={16} />
           Date de référence : {formatLongDate(today)}
         </p>
+        <DiscardExpired stock={stock} today={today} onDiscardExpired={onDiscardExpired} />
         <StockContent stock={stock} today={today} onAction={onAction} />
       </main>
     </>
+  );
+}
+
+function discardedMessage(count: number): string {
+  return count > 1
+    ? `${count} produits marqués comme jetés.`
+    : `${count} produit marqué comme jeté.`;
+}
+
+function DiscardExpired({
+  stock,
+  today,
+  onDiscardExpired,
+}: {
+  stock: StockState;
+  today: ISODate;
+  onDiscardExpired: () => Promise<number>;
+}) {
+  const [confirming, setConfirming] = useState(false);
+  const [busy, setBusy] = useState(false);
+  const [message, setMessage] = useState<string>();
+  const [error, setError] = useState<string>();
+  const busyRef = useRef(false);
+  const triggerRef = useRef<HTMLButtonElement>(null);
+  const feedbackRef = useRef<HTMLDivElement>(null);
+
+  const count =
+    stock.status === "ready"
+      ? stock.items.filter((item) => isExpiredDlcInStock(item, today)).length
+      : 0;
+  const showDialog = confirming && count > 0 && !busy;
+
+  function cancel() {
+    setConfirming(false);
+    triggerRef.current?.focus();
+  }
+
+  async function confirm() {
+    if (busyRef.current) return;
+    busyRef.current = true;
+    setConfirming(false);
+    setBusy(true);
+    setMessage(undefined);
+    setError(undefined);
+    // Le bouton déclencheur est désactivé pendant le traitement : le focus va aux messages.
+    feedbackRef.current?.focus();
+    try {
+      setMessage(discardedMessage(await onDiscardExpired()));
+    } catch {
+      setError(
+        "Impossible de vider les produits périmés : le stockage local a refusé la modification. Aucun produit n'a été modifié.",
+      );
+    } finally {
+      busyRef.current = false;
+      setBusy(false);
+    }
+  }
+
+  return (
+    <div class="discard-expired">
+      <button
+        ref={triggerRef}
+        type="button"
+        class="btn btn-secondary btn-block"
+        disabled={count === 0 || busy}
+        aria-describedby="vider-perimes-aide"
+        onClick={() => {
+          setMessage(undefined);
+          setError(undefined);
+          setConfirming(true);
+        }}
+      >
+        <Icon name="trash" />
+        Vider les produits périmés
+      </button>
+      <p id="vider-perimes-aide" class="discard-expired-hint">
+        {count === 0
+          ? "Aucun produit à DLC dépassée en stock."
+          : `${count} produit${count > 1 ? "s" : ""} à DLC dépassée. Les DDM dépassées sont conservées.`}
+      </p>
+      <div ref={feedbackRef} tabIndex={-1} class="discard-expired-feedback">
+        <div role="status" aria-live="polite">
+          {busy && <p>Vidage des produits périmés en cours…</p>}
+          {message && (
+            <Notice tone="success" icon="checkCircle">
+              {message}
+            </Notice>
+          )}
+        </div>
+        {error && (
+          <div role="alert">
+            <Notice tone="danger" icon="alert">
+              {error}
+            </Notice>
+          </div>
+        )}
+      </div>
+      {showDialog && (
+        <ConfirmDialog
+          title={
+            count > 1
+              ? `Marquer ces ${count} produits comme jetés ?`
+              : "Marquer ce produit comme jeté ?"
+          }
+          confirmLabel={count > 1 ? "Marquer comme jetés" : "Marquer comme jeté"}
+          onConfirm={() => void confirm()}
+          onCancel={cancel}
+        >
+          <p>
+            Seuls les produits en stock dont la DLC est dépassée sont concernés. Ils sont conservés
+            avec le statut « jeté » et ne comptent pas comme sauvés.
+          </p>
+        </ConfirmDialog>
+      )}
+    </div>
   );
 }
 

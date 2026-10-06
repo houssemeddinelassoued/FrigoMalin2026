@@ -70,6 +70,7 @@ test("demande confirmation avec le nombre exact et annule sans lancer l'action",
   await user.click(within(dialog).getByRole("button", { name: "Annuler" }));
 
   expect(screen.queryByRole("dialog")).not.toBeInTheDocument();
+  expect(screen.getByRole("button", { name: "Vider les produits périmés" })).toHaveFocus();
   expect(onDiscardExpired).not.toHaveBeenCalled();
 });
 
@@ -107,6 +108,49 @@ test("annonce explicitement une erreur de stockage sans afficher de succès", as
   });
   await user.click(within(dialog).getByRole("button", { name: "Marquer comme jetés" }));
 
-  expect(await screen.findByRole("alert")).toHaveTextContent(/impossible|échec/i);
-  expect(screen.queryByText(/produit marqué comme jeté/i)).not.toBeInTheDocument();
+  expect(await screen.findByRole("alert")).toHaveTextContent(
+    "Impossible de vider les produits périmés : le stockage local a refusé la modification. Aucun produit n'a été modifié.",
+  );
+  expect(screen.queryByText(/produits? marqués? comme jetés?/i)).not.toBeInTheDocument();
+  expect(screen.getByRole("button", { name: "Vider les produits périmés" })).toBeEnabled();
+  expect(onDiscardExpired).toHaveBeenCalledTimes(1);
+});
+
+test("gère le clavier : focus sur Annuler, Échap ferme et rend le focus au bouton", async () => {
+  const user = userEvent.setup();
+  const onDiscardExpired = vi.fn(async () => 2);
+  afficherStock([item({ id: "a" }), item({ id: "b" })], onDiscardExpired);
+  const trigger = screen.getByRole("button", { name: "Vider les produits périmés" });
+
+  trigger.focus();
+  await user.keyboard("{Enter}");
+  const dialog = screen.getByRole("dialog", { name: "Marquer ces 2 produits comme jetés ?" });
+  expect(dialog).toHaveAttribute("aria-modal", "true");
+  expect(within(dialog).getByRole("button", { name: "Annuler" })).toHaveFocus();
+  await user.tab();
+  expect(within(dialog).getByRole("button", { name: "Marquer comme jetés" })).toHaveFocus();
+  await user.tab();
+  expect(within(dialog).getByRole("button", { name: "Annuler" })).toHaveFocus();
+  await user.tab({ shift: true });
+  expect(within(dialog).getByRole("button", { name: "Marquer comme jetés" })).toHaveFocus();
+
+  await user.keyboard("{Escape}");
+  expect(screen.queryByRole("dialog")).not.toBeInTheDocument();
+  expect(trigger).toHaveFocus();
+  expect(onDiscardExpired).not.toHaveBeenCalled();
+});
+
+test("accorde la confirmation et le résultat au singulier pour un seul produit", async () => {
+  const user = userEvent.setup();
+  afficherStock(
+    [item({ id: "a" })],
+    vi.fn(async () => 1),
+  );
+
+  await user.click(screen.getByRole("button", { name: "Vider les produits périmés" }));
+  const dialog = screen.getByRole("dialog", { name: "Marquer ce produit comme jeté ?" });
+  await user.click(within(dialog).getByRole("button", { name: "Marquer comme jeté" }));
+
+  const result = await screen.findByText("1 produit marqué comme jeté.");
+  expect(result.closest('[role="status"]')).toBeInTheDocument();
 });

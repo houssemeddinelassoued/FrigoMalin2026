@@ -1,4 +1,5 @@
 import { isISODate } from "../domain/dates.ts";
+import { isExpiredDlcInStock } from "../domain/expiry.ts";
 import type { ISODate, StockItem } from "../domain/types.ts";
 import { db } from "./db.ts";
 import { generateSeedItems } from "./seed.ts";
@@ -30,6 +31,21 @@ export async function closeItem(
     if (!item || item.status !== "en-stock") return false;
     await db.stockItems.update(id, { status, closedOn: today });
     return true;
+  });
+}
+
+/**
+ * Marque comme jetés, en une seule transaction, tous les aliments en stock dont la
+ * DLC est dépassée. Les enregistrements sont conservés ; renvoie le nombre traité.
+ */
+export async function discardExpiredItems(today: ISODate): Promise<number> {
+  return db.transaction("rw", db.stockItems, async () => {
+    const active = await db.stockItems.where("status").equals("en-stock").toArray();
+    const expired = active.filter((item) => isExpiredDlcInStock(item, today));
+    for (const item of expired) {
+      await db.stockItems.update(item.id, { status: "jeté", closedOn: today });
+    }
+    return expired.length;
   });
 }
 

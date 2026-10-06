@@ -4,8 +4,8 @@ import { serviceWorker } from "./build/service-worker.ts";
 
 // https://vite.dev/config/
 export default defineConfig({
-  // GitHub Pages sert le projet sous /FrigoMalin/ (ADR 0002, ADR 0003).
-  base: "/FrigoMalin/",
+  // GitHub Pages sert le projet sous /FrigoMalin2026/ (ADR 0002, ADR 0003).
+  base: "/FrigoMalin2026/",
   plugins: [preact(), serviceWorker(["favicon.svg"])],
   test: {
     environment: "jsdom",

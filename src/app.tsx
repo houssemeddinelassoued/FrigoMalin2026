@@ -2,7 +2,7 @@ import { useEffect, useState } from "preact/hooks";
 import type { ItemAction } from "./components/ItemCard.tsx";
 import { BottomNav } from "./components/Layout.tsx";
 import { useStock, useToday } from "./data/hooks.ts";
-import { closeItem } from "./data/stock.ts";
+import { closeItem, discardExpiredItems } from "./data/stock.ts";
 import { isSaved } from "./domain/impact.ts";
 import type { StockItem } from "./domain/types.ts";
 import { navigate, useRoute } from "./router.ts";
@@ -60,7 +60,14 @@ export function App() {
       <a class="skip-link" href="#contenu">
         Aller au contenu
       </a>
-      {route === "stock" && <StockScreen stock={stock} today={today} onAction={onAction} />}
+      {route === "stock" && (
+        <StockScreen
+          stock={stock}
+          today={today}
+          onAction={onAction}
+          onDiscardExpired={() => discardExpiredItems(today)}
+        />
+      )}
       {route === "ajouter" && <AddProductScreen today={today} onSaved={onSaved} />}
       {route === "recettes" && <RecipesScreen stock={stock} today={today} onCooked={onCooked} />}
       {route === "bilan" && (

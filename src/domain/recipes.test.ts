@@ -68,10 +68,7 @@ describe("suggestRecipes — score", () => {
   test("a product past its DLC is not available", () => {
     expect(
       summarize(
-        [
-          item({ name: "Crème", dateKind: "DLC", expiresOn: inDays(-1) }),
-          item({ name: "Œufs" }),
-        ],
+        [item({ name: "Crème", dateKind: "DLC", expiresOn: inDays(-1) }), item({ name: "Œufs" })],
         [recipe("Omelette", "Œufs", "Crème")],
       ),
     ).toEqual([{ id: "Omelette", score: 1, used: ["Œufs"] }]);
@@ -151,9 +148,10 @@ describe("suggestRecipes — ties", () => {
       item({ name: "C" }),
     ];
     expect(
-      summarize(stock, [recipe("Aïoli", "B", "C"), recipe("Zeste", "A")]).map(
-        ({ id, score }) => [id, score],
-      ),
+      summarize(stock, [recipe("Aïoli", "B", "C"), recipe("Zeste", "A")]).map(({ id, score }) => [
+        id,
+        score,
+      ]),
     ).toEqual([
       ["Zeste", 4],
       ["Aïoli", 4],

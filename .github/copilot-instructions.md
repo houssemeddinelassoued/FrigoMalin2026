@@ -3,7 +3,7 @@ Produit : voir PRODUCT.md. Décisions : docs/adr/. Backlog : GitHub Issues (crit
 
 ## Stack
 Vite + TypeScript strict + Preact · Dexie (IndexedDB) · Vitest + Testing Library · Playwright.
-Application 100 % statique publiée sur GitHub Pages sous /FrigoMalin/.
+Application 100 % statique publiée sur GitHub Pages sous /FrigoMalin2026/.
 
 ## Commandes
 npm run dev · npm test · npm run lint · npm run build · npm run test:e2e

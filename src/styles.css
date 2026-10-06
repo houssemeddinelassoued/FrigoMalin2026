@@ -1092,6 +1092,61 @@ legend.card-title + * {
   box-shadow: var(--shadow-float);
 }
 
+/* Vidage des produits périmés */
+.discard-expired {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+.discard-expired-hint {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+}
+.discard-expired-feedback:focus {
+  outline: none;
+}
+.discard-expired-feedback p {
+  margin: 0;
+}
+
+/* Boîte de dialogue de confirmation */
+.dialog-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-md);
+  background: rgba(18, 28, 42, 0.55);
+}
+.dialog {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  width: 100%;
+  max-width: 28rem;
+  max-height: calc(100vh - 2 * var(--space-md));
+  overflow-y: auto;
+}
+.dialog-title {
+  margin: 0;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+}
+.dialog p {
+  margin: 0;
+}
+.dialog-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+.dialog-actions .btn {
+  flex: 1 1 8rem;
+}
+
 @media (min-width: 768px) {
   .screen {
     padding: var(--space-lg) var(--space-xl);

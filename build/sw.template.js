@@ -1,7 +1,7 @@
 // Service worker de FrigoMalin. Ce modèle est complété au build par
 // build/service-worker.ts : ne pas le charger tel quel.
 const CACHE = "frigomalin-__VERSION__";
-// Chemins relatifs à sw.js, donc au préfixe de publication (/FrigoMalin/).
+// Chemins relatifs à sw.js, donc au préfixe de publication (/FrigoMalin2026/).
 const PRECACHE = __PRECACHE__;
 const SHELL = "./";
 
