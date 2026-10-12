@@ -1,15 +1,35 @@
 ---
-applyTo: "src/ui/*.tsx"
+description: "Use when building FrigoMalin UI: composants et pages Preact, JSX/TSX, routage preact-iso, état (hooks, contexte), accessibilité, formulaires, styles CSS, invite de mise à jour PWA."
+applyTo: "src/**/*.tsx, src/**/*.css"
 ---
+# Interface — FrigoMalin
 
-# Interface utilisateur FrigoMalin
+Référence : [ADR 0002 — framework UI](../../docs/adrs/0002-framework-ui.md).
 
-- Suivre la stack produit Vite, TypeScript strict et React, ainsi que les commandes et règles communes de `.github/copilot-instructions.md`.
-- Le squelette actuel importe Preact dans `src/app.tsx` alors que la stack produit spécifie React. Ne mélange pas les API React et Preact et ne modifie pas les dépendances ou la configuration du framework sans demande explicite ; signale cette divergence lorsqu'elle affecte le travail.
-- Garder l'interface en français et concevoir d'abord pour un écran mobile de 360 px ; assurer l'accessibilité WCAG AA, notamment la navigation clavier, les libellés explicites, le contraste et les états de focus.
-- Faire fonctionner chaque parcours essentiel sans réseau après le chargement de l'application. Ne pas ajouter d'appel réseau dans l'interface ; toute recherche Open Food Facts passe par la couche `src/data/` et prévoit un repli manuel.
-- Garder les composants d'interface dans `src/ui/`, dans un dossier par composant, et déléguer les règles métier à `src/domain/` et la persistance à `src/data/`.
-- Représenter explicitement les états de chargement, vide, erreur et hors ligne quand ils s'appliquent. Ne pas masquer une erreur derrière un état de succès ou un contenu factice.
-- Utiliser des éléments HTML sémantiques et les API accessibles du framework configuré. Éviter `any`, les accès directs au stockage persistant depuis les composants et la logique métier dans le JSX.
-- Pour chaque parcours d'interface ajouté ou modifié, couvrir le comportement avec Testing Library ; ajouter un test Playwright pour tout parcours clé.
-- Respecter le budget JavaScript initial de moins de 200 Ko gzip et viser un score Lighthouse d'au moins 90 ; éviter d'ajouter une dépendance sans l'expliquer.
+## Preact
+
+- Preact 11 + TypeScript strict, `@preact/preset-vite`. Pas de `preact/compat` sans justification et test.
+- Attribut `class` (et non `className`) dans le JSX.
+- Champs texte : utiliser `onInput` (en Preact, `onChange` ne se déclenche qu'à la perte de focus).
+- État : `useState`, `useReducer` et contexte. Pas de bibliothèque d'état globale ni de `@preact/signals`.
+- Données : passer par `InventaireRepository`, fourni par un contexte Preact ; jamais d'accès direct à IndexedDB.
+- Afficher les erreurs de stockage ; ne confirmer une sauvegarde qu'après résolution de l'appel au dépôt.
+
+## Routage et organisation
+
+- Routage `preact-iso` ; chemins déclarés uniquement dans `src/navigation.ts`.
+- Écrans routés dans `src/pages/`, composants réutilisables dans `src/composants/`.
+- Invite de mise à jour PWA (`registerType: 'prompt'`) : `src/composants/MiseAJour.tsx`.
+
+## Textes et dates
+
+- Textes d'interface en français ; dates affichées au format local.
+- Une DDM dépassée n'est jamais présentée comme une impropriété à la consommation.
+- Aucune notification navigateur.
+
+## Accessibilité
+
+- Éléments HTML natifs (`form`, `label`, `button`, `dialog`) ; pas de kit UI.
+- Libellés explicites, navigation clavier complète.
+- Un état n'est jamais porté par la seule couleur.
+- `eslint-plugin-jsx-a11y` doit passer sans erreur.
