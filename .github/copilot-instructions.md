@@ -1,49 +1,56 @@
-# FrigoMalin — instructions pour Copilot
-Produit : voir PRODUCT.md. Décisions : docs/adr/. Backlog : GitHub Issues (critères Gherkin).
+# Instructions Copilot — FrigoMalin
 
-## Stack
-Vite + TypeScript strict + Preact · Dexie (IndexedDB) · Vitest + Testing Library · Playwright.
-Application 100 % statique publiée sur GitHub Pages sous /FrigoMalin2026/.
+PWA en français, sans backend ni compte, installable et utilisable hors ligne : suivi des aliments (DLC/DDM), alertes sur les dates proches ou dépassées, recettes embarquées adaptées au stock.
 
-## Commandes
-npm run dev · npm test · npm run lint · npm run build · npm run test:e2e
+Contexte à lire avant toute évolution : [PRODUCT.md](../PRODUCT.md), [docs/mvp.md](../docs/mvp.md), [ADR](../docs/adrs/). Toute décision d'architecture nouvelle ou révisée passe par un ADR (agent `Architecte`).
+
+Instructions détaillées (chargées selon les fichiers) :
+
+- [Domaine et stockage](instructions/domain.instructions.md) — DLC/DDM, IndexedDB, migrations, recettes, export.
+- [Interface](instructions/ui.instructions.md) — Preact, routage, état, accessibilité.
+- [Tests](instructions/tests.instructions.md) — Vitest, Testing Library, fake-indexeddb.
+
+## Contraintes non négociables
+
+- Aucun backend, aucun appel réseau à l'exécution, aucun suivi analytique, aucune notification navigateur.
+- Données uniquement dans le navigateur (IndexedDB via `idb`) ; export JSON prévu.
+- Jamais de sauvegarde annoncée avant confirmation de la transaction (`tx.done`) ; toute erreur de stockage est remontée à l'interface.
+- Une DDM dépassée n'est jamais présentée comme une impropriété à la consommation.
+
+## Pile technique
+
+Preact 11 + TypeScript strict + Vite 8, routage `preact-iso`, PWA `vite-plugin-pwa` (Workbox), IndexedDB via `idb`, état par hooks et contexte.
+
+## Conventions générales
+
+- Code, noms de domaine, textes d'interface et tests en **français**.
+- Commentaires uniquement pour clarifier une intention non évidente.
 
 ## Structure
-src/domain/  logique métier pure (aucun import React ni Dexie)
-src/data/    accès IndexedDB (Dexie) et données de départ
-src/ui/      composants (un dossier par composant)
-e2e/         Playwright
 
-## Principes non négociables
-1. Zéro backend, zéro secret : tout s'exécute dans le navigateur (IndexedDB).
-2. Hors ligne d'abord : chaque fonctionnalité essentielle marche sans réseau.
-3. Tests d'abord : toute règle métier a son test Vitest ; chaque parcours clé, son test Playwright.
-4. Accessibilité AA, mobile d'abord (360 px).
-5. Budget : JavaScript initial < 200 Ko gzip ; Lighthouse ≥ 90.
+```
+src/
+  main.tsx, App.tsx   point d'entrée, mise en page et routeur
+  navigation.ts       chemins des routes
+  pages/              écrans routés
+  composants/         composants réutilisables
+  stockage/           IndexedDB (schéma, migrations, dépôt)
+  test/setup.ts       configuration Vitest
+public/               ressources statiques (icônes)
+docs/                 périmètre MVP et ADR
+reports/              rapports de feature rédigés par l'agent Lead
+.githooks/            hooks Git versionnés (activés par npm run hooks:install)
+```
 
-Si une demande contredit un de ces principes, ne pas l'implémenter : expliquer le conflit et proposer une alternative conforme.
+## Commandes
 
-## Règles du projet
-- Dates au format ISO AAAA-MM-JJ ; comparer uniquement via src/domain/dates.ts.
-- DLC dépassée = à jeter ; DDM dépassée = encore consommable (voir le glossaire dans PRODUCT.md, section « Glossaire »).
-- Aucun appel réseau sauf Open Food Facts (src/data/openFoodFacts.ts), toujours avec repli hors ligne.
-- Textes d'interface en français.
-- Identifiants de code, noms de fichiers et commits en anglais ; commentaires et noms de tests en français.
+| Commande | Rôle |
+|---|---|
+| `npm run dev` / `npm run preview` | Serveur de dev / build servi localement (test hors ligne) |
+| `npm run build` | `tsc -b` puis build de production avec service worker |
+| `npm run lint` / `npm run lint:fix` | ESLint (TypeScript, jsx-a11y, hooks) |
+| `npm run format` / `npm run format:check` | Prettier (Markdown exclu) |
+| `npm test` / `npm run test:run` / `npm run test:coverage` | Vitest watch / unique / couverture |
+| `npm run hooks:install` | Active les hooks Git de `.githooks/` (pre-commit : prompt de revue de sécurité copié dans le presse-papiers, puis confirmation y/n) |
 
-## Interdits
-- Pas de backend, pas de secret, pas de clé d'API dans le code.
-- Ne jamais lire .env* ni exports/.
-- Pas de nouvelle dépendance sans le signaler dans la réponse
-
-## Journalisation systématique des demandes
-
-- À la fin de chaque demande utilisateur, avant la réponse finale, ajouter une ligne dans `docs/usage-log.md`, sans attendre une demande de journalisation. Cela inclut les questions, analyses et changements de documentation, pas seulement les modifications de code.
-- Lire le journal avant de le modifier, conserver son en-tête et toutes les lignes existantes, puis ajouter la nouvelle entrée à la fin. Ne pas remplacer l'historique.
-- Une entrée correspond à une demande utilisateur, pas à un appel d'outil ni à un message de progression. Si une entrée a déjà été créée pour la demande en cours, la mettre à jour plutôt que la dupliquer.
-- Renseigner les colonnes : `Date`, `Agent`, `Modèle`, `Tours`, `Crédits`, `Contexte (Tokens)`, `Résultat (OK / à reprendre)` et `Remarque`.
-- Utiliser une date et une heure ISO 8601 avec fuseau horaire lorsqu'elles sont disponibles. `Tours` désigne le nombre de demandes utilisateur couvertes par la ligne ; écrire `1` pour une entrée par demande.
-- Indiquer le nom réel de l'agent et le modèle uniquement s'ils sont connus. Écrire `non communiqué` pour un modèle indisponible et `non mesuré` pour les crédits ou tokens non exposés par l'outil. Ne jamais inventer ces valeurs ni les déduire du nombre d'appels d'outils.
-- Écrire `OK` lorsque la demande est traitée ; écrire `à reprendre` si elle reste bloquée, incomplète ou en attente d'une décision. Pour une modification de code, ne déclarer `OK` qu'après les vérifications adaptées, ou indiquer explicitement dans la remarque celles qui n'ont pas pu être exécutées.
-- Résumer la tâche dans une remarque courte, sans recopier le prompt, le code, des secrets ou des données personnelles. Remplacer les retours à la ligne par des espaces et échapper les caractères `|` pour préserver le tableau Markdown.
-- Si l'écriture du journal échoue, le signaler dans la réponse finale ; ne pas annoncer que l'entrée a été enregistrée.
-- Cette règle automatise le geste de journalisation par l'assistant lorsqu'il peut modifier les fichiers. Elle ne constitue ni un hook de l'outil ni une mesure automatique de la consommation.
+Une tâche n'est terminée que si `npm run lint`, `npm run format:check`, `npm run test:run` et `npm run build` réussissent.
